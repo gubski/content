@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microeconomics I – Test Prep</title>
+<style>
+:root{--bg:#fbfbfd;--ink:#1d1d1f;--mute:#6e6e73;--line:#e5e5ea;--blue:#0071e3;--green:#34c759;--orange:#ff9500;--red:#ff3b30;--purple:#af52de;--teal:#30b0c7;--card:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);overflow:hidden;-webkit-font-smoothing:antialiased;line-height:1.5}
+#deck{position:fixed;inset:0}
+.slide{position:absolute;inset:0;padding:78px 6vw 96px;overflow-y:auto;opacity:0;pointer-events:none;transform:translateY(28px) scale(.985);transition:opacity .55s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.slide.active{opacity:1;pointer-events:auto;transform:none;visibility:visible}
+.wrap{max-width:1120px;margin:0 auto}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
+h1{font-size:clamp(42px,7.4vw,88px);line-height:1.02;letter-spacing:-.035em;margin:0 0 18px;font-weight:700}
+h2{font-size:clamp(30px,4.4vw,52px);line-height:1.08;letter-spacing:-.03em;margin:0 0 14px;font-weight:700}
+h3{font-size:22px;letter-spacing:-.01em;margin:28px 0 8px}
+h4{font-size:18px;margin:0 0 10px;line-height:1.35}
+p{margin:0 0 12px}
+.lead{font-size:clamp(18px,2vw,24px);color:var(--mute);max-width:820px;margin-bottom:26px}
+.grad{background:linear-gradient(90deg,#0071e3,#af52de 55%,#ff375f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero{display:flex;align-items:center;background:radial-gradient(1100px 600px at 80% -10%,#e8f1ff,transparent),radial-gradient(900px 500px at 0% 110%,#f6e9ff,transparent),var(--bg)}
+.hero .wrap{width:100%}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:0 1px 2px rgba(0,0,0,.03),0 10px 30px -18px rgba(0,0,0,.18)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.callout{border-radius:18px;padding:16px 20px;margin:16px 0;border:1px solid}
+.callout b:first-child{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.tip{background:#eef6ff;border-color:#cfe4ff}.tip b:first-child{color:var(--blue)}
+.warn{background:#fff4e5;border-color:#ffdca8}.warn b:first-child{color:#b25e00}
+.key{background:#eafaf0;border-color:#bfeccd}.key b:first-child{color:#168a3b}
+.def{border-left:4px solid var(--blue);background:#fff;padding:12px 18px;border-radius:0 14px 14px 0;margin:12px 0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.def b{color:var(--blue)}
+ol.steps{counter-reset:s;list-style:none;padding:0;margin:14px 0}
+ol.steps li{counter-increment:s;position:relative;padding:14px 18px 14px 58px;background:#fff;border:1px solid var(--line);border-radius:16px;margin:10px 0}
+ol.steps li::before{content:counter(s);position:absolute;left:15px;top:13px;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px}
+table{border-collapse:separate;border-spacing:0;width:100%;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:15px;margin:12px 0}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:#f5f5f7;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+tr:last-child td{border-bottom:0}
+.r{color:#168a3b;font-weight:700}.l{color:#c4291c;font-weight:700}
+.btn{appearance:none;border:0;background:var(--blue);color:#fff;border-radius:980px;padding:9px 18px;font:600 14px inherit;font-family:inherit;cursor:pointer;transition:transform .15s,background .2s}
+.btn:hover{background:#0077ed;transform:scale(1.03)}
+.btn.ghost{background:#f0f0f3;color:var(--ink)}.btn.ghost:hover{background:#e6e6ea}
+.btn.on{background:var(--ink);color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+select{font:inherit;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:#fff;width:100%}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.ctrl{margin:12px 0}.ctrl label{display:block;font-size:14px;font-weight:600;margin-bottom:4px}
+.lab{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:start;margin:18px 0}
+@media(max-width:960px){.lab{grid-template-columns:1fr}}
+.chart{width:100%;height:auto;background:#fff;border:1px solid var(--line);border-radius:20px;display:block}
+.grid{stroke:#f0f0f2;stroke-width:1}.axis{stroke:#1d1d1f;stroke-width:1.6}
+.tick{font-size:11px;fill:#86868b}.alabel{font-size:12.5px;fill:#1d1d1f;font-weight:600}.lbl{font-size:12.5px;font-weight:700}
+.read{background:#f5f5f7;border-radius:16px;padding:14px 16px;font-size:15px;margin:12px 0}
+.read b{font-variant-numeric:tabular-nums}
+.legend{list-style:none;padding:0;margin:14px 0 0}
+.legend li{display:flex;gap:12px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.legend li div{display:flex;flex-direction:column}.legend span{color:var(--mute)}
+.sw{display:block;width:26px;height:0;border-top:4px solid var(--c);margin-top:9px;flex:none;border-radius:2px}
+.sw.dash{border-top-style:dashed}.sw.dot{width:12px;height:12px;border:0;background:var(--c);border-radius:50%;margin:5px 7px 0}
+.sw.box{width:22px;height:14px;border:0;background:var(--c);opacity:.4;border-radius:3px;margin-top:4px}
+details.pr{background:#fff;border:1px solid var(--line);border-radius:16px;margin:8px 0;padding:0 18px;transition:box-shadow .2s}
+details.pr[open]{box-shadow:0 12px 30px -18px rgba(0,0,0,.25)}
+details.pr summary{cursor:pointer;list-style:none;padding:13px 0;font-weight:600;display:flex;gap:12px;align-items:center}
+details.pr summary::-webkit-details-marker{display:none}
+details.pr .n{width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:14px;flex:none}
+details.pr p{color:#3a3a3c;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#f0f0f3;border-radius:980px;padding:5px 12px;font-size:13px;font-weight:600}
+.road{cursor:pointer;transition:transform .2s,box-shadow .2s}.road:hover{transform:translateY(-3px);box-shadow:0 16px 34px -18px rgba(0,0,0,.3)}
+.road .num{font-size:13px;color:var(--blue);font-weight:700;letter-spacing:.08em}
+/* quiz */
+.qhead{display:flex;justify-content:space-between;align-items:center;margin:8px 0 14px;position:sticky;top:-78px;padding:10px 0;background:linear-gradient(var(--bg) 80%,transparent);z-index:3}
+.score{font-size:18px}.score b{font-size:24px;color:var(--blue)}
+.q{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 22px;margin:14px 0}
+.qn{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.opt{display:block;width:100%;text-align:left;font:inherit;padding:12px 16px;margin:8px 0;border-radius:14px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:all .15s}
+.opt:hover{border-color:var(--blue);background:#f5faff}
+.q.done .opt{cursor:default}.q.done .opt:hover{background:#fff;border-color:var(--line)}
+.opt.correct{border-color:var(--green)!important;background:#eafaf0!important}
+.opt.wrong{border-color:var(--red)!important;background:#fff0ee!important}
+.exp{display:none;margin-top:10px;padding:12px 16px;border-radius:14px;background:#f5f5f7;font-size:15px}
+.q.done .exp{display:block;animation:pop .35s}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.qfinal{margin:18px 0}
+.qfinal .card{text-align:center}.qfinal .big{font-size:52px;font-weight:700;letter-spacing:-.03em}
+.cls{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center}
+.cls .st{padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:16px;margin:8px 0}
+.cls .st .fb{margin-top:6px;font-size:14px;display:none}
+.st.ok{border-color:var(--green);background:#eafaf0}.st.no{border-color:var(--red);background:#fff0ee}
+/* chrome */
+#bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#0071e3,#af52de,#ff375f);width:0;z-index:50;transition:width .4s}
+#top{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:rgba(251,251,253,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);z-index:40;border-bottom:1px solid rgba(0,0,0,.05);font-size:13px;font-weight:600}
+#top .sec{color:var(--mute)}
+#nav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:rgba(255,255,255,.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(0,0,0,.07);border-radius:980px;padding:6px 8px;z-index:40;box-shadow:0 10px 30px -12px rgba(0,0,0,.25)}
+#nav button{border:0;background:#f0f0f3;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer}
+#nav button:hover{background:#e3e3e8}
+#cnt{font-size:13px;font-weight:600;min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+#menu{position:fixed;top:52px;right:12px;width:min(340px,92vw);max-height:76vh;overflow:auto;background:rgba(255,255,255,.96);backdrop-filter:blur(20px);border:1px solid var(--line);border-radius:18px;padding:10px;z-index:60;box-shadow:0 20px 50px -20px rgba(0,0,0,.35);display:none}
+#menu.open{display:block}
+#menu h6{margin:10px 8px 4px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+#menu a{display:block;padding:7px 10px;border-radius:10px;font-size:14px;color:var(--ink);text-decoration:none;cursor:pointer}
+#menu a:hover,#menu a.cur{background:#eef6ff;color:var(--blue)}
+.flow{cursor:pointer}.flow .vis{transition:stroke-width .2s}.flow.sel .vis{stroke-width:6}.flow:hover .vis{stroke-width:5}
+.flow.sel text{font-weight:800}
+.boxlbl{font-size:13px;font-weight:700;fill:#1d1d1f}.boxsub{font-size:11.5px;fill:#6e6e73}
+.hint{font-size:13px;color:var(--mute)}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div id="top"><div><b>Microeconomics I</b> <span class="sec" id="secname"></span></div><button class="btn ghost" id="menubtn">☰ Contents</button></div>
+<div id="menu"></div>
+<div id="deck">
+
+<!-- 0 -->
+<section class="slide hero" data-title="Start here" data-sec="Intro"><div class="wrap">
+<p class="eyebrow">Test prep · Lectures 1–3</p>
+<h1>Microeconomics I.<br><span class="grad">Understand it, then ace it.</span></h1>
+<p class="lead">Scarcity and the 10 principles · models and positive vs normative statements · demand, supply, equilibrium, price controls and taxes. Every part has step-by-step explanations, interactive graphs where each line is explained, and a quiz.</p>
+<div class="btns"><button class="btn" onclick="__go(1)">Start →</button><button class="btn ghost" onclick="__goT('Mock test')">Jump to the mock test</button></div>
+<p class="hint" style="margin-top:22px">Navigate with ← → keys, the buttons at the bottom, or the Contents menu (top right).</p>
+</div></section>
+
+<!-- 1 -->
+<section class="slide" data-title="Roadmap" data-sec="Intro"><div class="wrap">
+<p class="eyebrow">Roadmap</p><h2>Six parts, one logic.</h2>
+<p class="lead">Each part builds on the previous one. Do them in order the first time; after that use the quizzes and the cheat sheet.</p>
+<div class="grid3">
+<div class="card road" onclick="__goT('Scarcity and choice')"><div class="num">PART 1</div><h4>Scarcity &amp; the 10 principles</h4><p class="hint">Why economics exists, opportunity cost, margins, incentives, trade, equilibrium.</p></div>
+<div class="card road" onclick="__goT('Economics as a science')"><div class="num">PART 2</div><h4>Science, models, positive vs normative</h4><p class="hint">Assumptions, natural experiments, why economists disagree.</p></div>
+<div class="card road" onclick="__goT('Circular flow')"><div class="num">PART 3</div><h4>Circular flow &amp; the PPF</h4><p class="hint">Robinson &amp; Friday: opportunity cost, comparative advantage, gains from trade.</p></div>
+<div class="card road" onclick="__goT('How to read the graphs')"><div class="num">PART 4</div><h4>Graph guide, demand &amp; supply</h4><p class="hint">What each axis and line means; building market curves; shifts.</p></div>
+<div class="card road" onclick="__goT('Market equilibrium')"><div class="num">PART 5</div><h4>Equilibrium &amp; the coffee market</h4><p class="hint">Surplus, shortage, double shifts, short vs long run.</p></div>
+<div class="card road" onclick="__goT('Price floors and ceilings')"><div class="num">PART 6</div><h4>Price controls &amp; taxes</h4><p class="hint">Minimum wage, rent control, tax incidence.</p></div>
+</div>
+<div class="callout tip" style="margin-top:24px"><b>How to study</b>Read the steps → play with the graph until you can predict what happens before you click → answer the quiz → re-read any explanation you missed.</div>
+</div></section>
+
+<!-- PART 1 -->
+<section class="slide" data-title="Scarcity and choice" data-sec="1 · Foundations"><div class="wrap">
+<p class="eyebrow">Part 1 · Foundations</p><h2>Scarcity: why economics exists.</h2>
+<p class="lead">Everything in this course grows out of one fact: we can't have everything.</p>
+<ol class="steps">
+<li><b>Resources are limited.</b> Land, labor, capital, time and technology are finite.</li>
+<li><b>Needs are (practically) unlimited.</b> People always want more goods (commodities and services).</li>
+<li><b>So we must choose.</b> Every use of a resource means giving up another use.</li>
+</ol>
+<div class="grid2">
+<div class="def"><b>Scarcity</b> – society has limited resources, so it cannot produce as many goods as people would like.</div>
+<div class="def"><b>Economics</b> – the study of the allocation of scarce resources among competing ends (often described as the study of people's choices).</div>
+</div>
+<h3>Two ways to allocate resources</h3>
+<div class="grid2">
+<div class="card"><h4>Command and control</h4><p>An all-powerful dictator/planner decides what is produced and who gets it. (North Korea in the lecture's map and night-light photo.)</p></div>
+<div class="card"><h4>Markets</h4><p>Millions of households and firms decide for themselves, guided by impersonal markets and prices. (South Korea.)</p></div>
+</div>
+<h3>What choices must be made?</h3>
+<div class="chips"><span class="chip">How much to use now vs save for later</span><span class="chip">How to divide a resource between uses</span><span class="chip">How to divide outputs between people</span><span class="chip">Whether to redistribute wealth</span></div>
+<div class="callout key"><b>Remember</b>Scarcity ≠ "expensive" and ≠ "poor countries only". It applies to every society, because wants outrun resources.</div>
+</div></section>
+
+<section class="slide" data-title="The 10 principles" data-sec="1 · Foundations"><div class="wrap">
+<p class="eyebrow">Part 1 · Foundations</p><h2>The 10 principles. Tap to open each.</h2>
+<p class="lead">Three levels: how individuals decide, how agents interact in markets, and how the whole economy behaves.</p>
+<h3>How individuals make decisions</h3>
+<details class="pr"><summary><span class="n">1</span>People face trade-offs</summary><p>Every choice gives up something ("you can't have your cake and eat it"). Individuals: time, budget, storage space. Societies: guns or butter, clean environment or higher income, and <b>efficiency vs equality</b> – taxing the rich to help the poor reduces the reward for working hard (a bigger pie or an equal split?).</p></details>
+<details class="pr"><summary><span class="n">2</span>The true cost of something is what you give up to get it (opportunity cost)</summary><p>Opportunity cost = the benefit lost by not choosing the <b>next best alternative</b>. The full cost of studying is not just tuition and books; the biggest part is the income you could have earned. "Free" Facebook is not free: you give up the alternative use of your time.</p></details>
+<details class="pr"><summary><span class="n">3</span>Rational agents think at the margin</summary><p>A marginal change is a small incremental adjustment. A rational agent acts only if <b>marginal benefit &gt; marginal cost</b>. Examples: last-minute travel deals (an empty seat costs almost nothing to fill) and the water–diamond paradox.</p></details>
+<details class="pr"><summary><span class="n">4</span>People respond to incentives</summary><p>Rewards and punishments change behavior. If the price of apples rises, quantity demanded falls and quantity supplied rises. When US gas went from about $2 to $4 (2005–08), people bought smaller cars, scooters, rode transit. Peltzman (1975): seat-belt laws → fewer deaths per accident but more accidents (safer driving → riskier driving).</p></details>
+<h3>How agents interact</h3>
+<details class="pr"><summary><span class="n">5</span>Trade can make everyone better off</summary><p>Specialization lets each person do what they do best and buy the rest. Adam Smith's pin factory (<i>The Wealth of Nations</i>, 1776): ten specialized workers make 48,000+ pins a day; working separately they could hardly make 20 each.</p></details>
+<details class="pr"><summary><span class="n">6</span>Markets move toward equilibrium</summary><p>Equilibrium = nobody can do better by changing their choice. After a shock, individuals' optimizing brings the system to a new equilibrium. Example: supermarket checkout lines even out in wait time; open a new counter and people rearrange until lines are equal again.</p></details>
+<details class="pr"><summary><span class="n">7</span>Markets are usually a good way to organize economic activity</summary><p>The "invisible hand" works through <b>prices</b>: buyers and sellers react to prices, so prices reflect both the value of a good to society and the cost of producing it. Central planners lacked this information, which contributed to the collapse of communism. Price controls and taxes distort the signal.</p></details>
+<details class="pr"><summary><span class="n">8</span>Governments can sometimes improve market outcomes</summary><p>Needed to enforce property rights. Also to fix <b>market failures</b>: an <b>externality</b> (one person's action, such as pollution, affects a bystander) and <b>market power</b> (one seller or a small group sets prices). And possibly to reduce inequality (income tax, welfare), depending on one's political philosophy.</p></details>
+<h3>How the economy as a whole works</h3>
+<details class="pr"><summary><span class="n">9</span>One person's spending is another person's income</summary><p>Chain reactions: US home construction fell &gt;60% between 2005 and 2011 → builders and suppliers lost income → they cut spending → slump spread to the whole economy. This is the circular flow of income.</p></details>
+<details class="pr"><summary><span class="n">10</span>A country's standard of living depends on its ability to produce goods and services</summary><p>Almost all variation in living standards comes from differences in <b>productivity</b> (output per unit of time). Policy to raise living standards: education, capital, best technology, innovation, R&amp;D. (Chart: GDP per capita 2022, about $58k US vs $32k Poland, in 2011 international dollars.)</p></details>
+</div></section>
+
+<section class="slide" data-title="Opportunity cost and margin in action" data-sec="1 · Foundations"><div class="wrap">
+<p class="eyebrow">Part 1 · Worked examples</p><h2>Is Facebook free? Do the maths.</h2>
+<p class="lead">The lecture prices your time at an opportunity cost. Change the inputs and watch the total.</p>
+<ol class="steps">
+<li>Time on social media per day (hours) × your hourly opportunity cost = cost per day.</li>
+<li>× 365 days = cost per person per year.</li>
+<li>× number of adults (254 million in the US in 2019) = cost to the economy.</li>
+</ol>
+<div class="grid2">
+<div class="card">
+<div class="ctrl"><label>Minutes per day: <b id="fbm">56</b></label><input type="range" id="fbmin" min="10" max="180" value="56"></div>
+<div class="ctrl"><label>Opportunity cost of time ($/hour): <b id="fbw">13</b></label><input type="range" id="fbwage" min="5" max="40" value="13"></div>
+</div>
+<div class="card"><div class="read" id="fbout"></div><p class="hint">Lecture's numbers: 1 hour/day × $13 × 365 = <b>$4,745</b> per adult; × 254 M ≈ <b>$1.2 trillion</b> (about twice Poland's 2019 GDP). The lecture rounds 56 minutes up to 1 hour. If a test asks, use the lecture's figures.</p></div>
+</div>
+<div class="callout key"><b>The point</b>This does NOT mean social media is a waste. Users get benefits (friends, entertainment). An economist only says the time has a cost; those with large benefits should carry on.</div>
+<h3>Thinking at the margin: the water–diamond paradox</h3>
+<div class="grid2">
+<div class="card"><h4>The puzzle</h4><p>Water is necessary for survival, diamonds are not. So why is a diamond far more expensive than a cup of water?</p></div>
+<div class="card"><h4>The answer</h4><p>Price follows <b>marginal</b> benefit, which depends on how many units you already have. Water is plentiful → the extra cup adds little. Diamonds are rare → one more adds a lot.</p></div>
+</div>
+</div></section>
+
+<section class="slide" data-title="Quiz 1: Foundations" data-sec="1 · Foundations"><div class="wrap">
+<p class="eyebrow">Quiz 1</p><h2>Foundations &amp; principles</h2>
+<p class="lead">Answers are explained after you pick one. Options are shuffled every time you restart.</p>
+<div class="quiz" data-bank="A"></div>
+</div></section>
+
+<!-- PART 2 -->
+<section class="slide" data-title="Economics as a science" data-sec="2 · Science & models"><div class="wrap">
+<p class="eyebrow">Part 2 · Science and models</p><h2>Economics as a science.</h2>
+<p class="lead">The essence of science is developing and testing theories about how the world works.</p>
+<ol class="steps">
+<li><b>Observe</b> something. Newton saw an apple fall; Friedman noticed people spend differently out of expected vs unexpected income.</li>
+<li><b>Build a theory/hypothesis</b> that generalizes. Newton: gravity acts between any two objects. Friedman (Nobel 1976): the <b>permanent income hypothesis</b> – spending depends more on expected (permanent) income than on transitory (unexpected) income.</li>
+<li><b>Test it against data.</b> Physicists run lab experiments. Economists rarely can, so they use <b>observations</b> (official statistics) and <b>natural experiments</b> from history.</li>
+</ol>
+<h3>Natural experiment: Oreopoulos (2006)</h3>
+<div class="grid2">
+<div class="card"><ol class="steps" style="margin:0"><li>Before 1947 the UK minimum school-leaving age was 14.</li><li>In 1947 it rose to 15, so almost nobody left at 14 any more.</li><li>Compare lifetime earnings of people who turned 14 in 1946 vs 1948.</li><li>Result: the return to one extra year of education is about <b>10%</b>.</li></ol></div>
+<div class="card"><h4>Why is this clever?</h4><p>A law changed schooling for one group and not the neighbouring cohort, almost like a randomly assigned treatment. That helps separate <b>causation</b> from mere <b>correlation</b>.</p></div>
+</div>
+</div></section>
+
+<section class="slide" data-title="Assumptions and models" data-sec="2 · Science & models"><div class="wrap">
+<p class="eyebrow">Part 2 · Science and models</p><h2>Assumptions and models.</h2>
+<p class="lead">"Everything should be made as simple as possible, but not simpler." (attributed to Einstein)</p>
+<div class="grid2">
+<div class="card"><h4>Why assume?</h4><p>Drop a ball from a 30 m building. Assume free fall (no air friction):</p>
+<div class="read">d = ½·g·t² → t = √(2×30 / 9.81) ≈ <b>2.47 s</b></div>
+<p>We accept a small error to keep the calculation simple. Which clock is better: one that loses a minute a day, or one that doesn't run at all? Economists likewise simplify the world to focus on the most important relationships.</p></div>
+<div class="card"><h4>A model is only adequate for its purpose</h4><p>A flat map is a fine model for finding a route in a city. For a Warsaw → Los Angeles flight (~10,000 km) the Earth's curvature matters, so the shortest route is not a straight line on that map. Each model has a specific application that depends on the assumptions made when building it.</p></div>
+</div>
+<h3>Theory vs model</h3>
+<table><tr><th>Theory</th><th>Model</th></tr>
+<tr><td>Generalized statement explaining a phenomenon</td><td>Application of a theory to a specific case</td></tr>
+<tr><td>Underlying principles</td><td>Specific phenomenon, narrower focus</td></tr>
+<tr><td>Conceptual framework – abstract</td><td>Verbal or visual representation – practical</td></tr>
+<tr><td>Qualitative</td><td>Quantitative</td></tr></table>
+<p class="hint">"Theory without practice is sterile; practice without theory is blind." (Kurt Lewin)</p>
+<h3>When models are misused</h3>
+<div class="callout warn"><b>LTCM (1994–98) and the 2007 sub-prime crisis</b>Sophisticated finance models (built partly by Nobel laureates) said a run of bad news like 1998 was extremely unlikely. They left out rare, severe scenarios, and the fund collapsed (rescued in part by officials). In 2007 funds omitted a severe downturn in the mortgage market. Lesson: even the best model can miss important possibilities. Judgment still matters.</div>
+</div></section>
+
+<section class="slide" data-title="Positive vs normative" data-sec="2 · Science & models"><div class="wrap">
+<p class="eyebrow">Part 2 · Science and models</p><h2>Positive vs normative statements.</h2>
+<div class="grid2">
+<div class="card"><h4 style="color:var(--blue)">Positive: "what is"</h4><p>Describes the world as it is (scientific approach). Can be confirmed or refuted by evidence. <b>A positive statement can still be false.</b></p></div>
+<div class="card"><h4 style="color:var(--purple)">Normative: "what ought to be"</h4><p>Prescribes how the world should be (policy advice). Includes <b>value judgments</b> about good/bad. Typical words: <i>should, ought, fair, unfair, better</i>.</p></div>
+</div>
+<h3>Why do economists disagree?</h3>
+<div class="grid2">
+<div class="card"><b>1. Different positive views</b><p>e.g. how strongly saving reacts to tax incentives → different opinions on taxing income vs consumption.</p></div>
+<div class="card"><b>2. Different values (normative)</b><p>e.g. what policy should achieve → total taxes paid vs the percentage rate on income.</p></div>
+</div>
+<p class="hint">Chicago Booth's Kent A. Clark Center polls expert panels. Example in the lecture: "Over the past 25 years the income of the median European citizen has declined substantially relative to the median American." Responses (confidence-weighted): strongly agree 17%, agree 33%, uncertain 18%, disagree 29%, strongly disagree 3%. Even experts split on a positive claim, and comments stress medians vs means and Eastern Europe's fast growth.</p>
+<h3>Try it: classify each statement</h3>
+<div class="cls" id="cls"></div>
+</div></section>
+
+<section class="slide" data-title="Quiz 2: Science and models" data-sec="2 · Science & models"><div class="wrap">
+<p class="eyebrow">Quiz 2</p><h2>Science, models, positive vs normative</h2>
+<div class="quiz" data-bank="B"></div>
+</div></section>
+
+<!-- PART 3 -->
+<section class="slide" data-title="Circular flow" data-sec="3 · Circular flow & PPF"><div class="wrap">
+<p class="eyebrow">Part 3 · Model 1</p><h2>The circular flow of income.</h2>
+<p class="lead">A visual model of the whole economy: who trades what with whom, and where the money goes. Click any arrow.</p>
+<div class="lab">
+<div id="flowsvg"></div>
+<div>
+<div class="read" id="flowinfo"><b>Click an arrow</b><br>to see what flows along it.</div>
+<div class="btns"><button class="btn" id="flowtour">▶ Next arrow</button><button class="btn ghost" id="flowreset">Reset</button></div>
+<ul class="legend">
+<li><i class="sw" style="--c:#34c759"></i><div><b>Green arrows = real flows</b><span>goods, services and factors of production (labor, land, capital).</span></div></li>
+<li><i class="sw" style="--c:#0071e3"></i><div><b>Blue arrows = money flows</b><span>payments in the opposite direction of the real flow they pay for.</span></div></li>
+<li><i class="sw box" style="--c:#8e8e93"></i><div><b>Boxes</b><span>Households and firms are the two agents; the two "markets" are where they meet; government taxes and spends.</span></div></li>
+</ul>
+</div></div>
+<ol class="steps">
+<li><b>Two agents.</b> Households buy/consume goods and own/sell factors. Firms produce/sell goods and hire/use factors.</li>
+<li><b>Two markets.</b> Markets for goods (firms sell, households buy) and for factors of production (households sell, firms buy).</li>
+<li><b>Two directions per market.</b> Something real flows one way, money flows the other way.</li>
+<li><b>Principle 9 appears here:</b> households' spending = firms' revenue; firms' payments for factors = households' income.</li>
+</ol>
+</div></section>
+
+<section class="slide" data-title="PPF: setting up the island" data-sec="3 · Circular flow & PPF"><div class="wrap">
+<p class="eyebrow">Part 3 · Model 2</p><h2>The Island of Despair.</h2>
+<p class="lead">Two people, two goods, scarce resources. This tiny economy teaches opportunity cost, comparative advantage and the PPF.</p>
+<div class="grid2">
+<div class="card"><h4>Robinson Crusoe</h4><p>Per week: <b>20 coconuts</b> <i>or</i> <b>40 fish</b> (or any mix: 20p coconuts and 40(1−p) fish, where p is the share of the week on coconuts).</p></div>
+<div class="card"><h4>Friday</h4><p>Per week: <b>50 coconuts</b> <i>or</i> <b>25 fish</b> (mix: 50q coconuts, 25(1−q) fish).</p></div>
+</div>
+<h3>Step 1: opportunity costs</h3>
+<p>Opportunity cost of a good = (amount of the other good given up) ÷ (amount of this good gained).</p>
+<table><tr><th></th><th>Robinson</th><th>Friday</th></tr>
+<tr><td>Cost of 1 fish</td><td>20 ÷ 40 = <b>½ coconut</b></td><td>50 ÷ 25 = <b>2 coconuts</b></td></tr>
+<tr><td>Cost of 1 coconut</td><td>40 ÷ 20 = <b>2 fish</b></td><td>25 ÷ 50 = <b>½ fish</b></td></tr>
+<tr><td><b>Comparative advantage</b></td><td><b>Fish</b> (lower cost)</td><td><b>Coconuts</b> (lower cost)</td></tr></table>
+<div class="callout key"><b>Comparative advantage</b>= the lower opportunity cost of producing a good. It is not about who produces more in absolute terms.</div>
+<h3>Step 2: gains from trade</h3>
+<ol class="steps">
+<li>Specialize by comparative advantage: Robinson catches 40 fish, Friday harvests 50 coconuts.</li>
+<li>Trade 20 fish for 20 coconuts.</li>
+<li>Robinson: (20 fish, 20 coconuts). Friday: (20 fish, 30 coconuts).</li>
+<li><b>Check:</b> alone, Robinson with 20 coconuts could catch no fish at all, and Friday with 30 coconuts could catch only 10 fish. Neither reaches these bundles alone. Principle 5: trade can make everyone better off.</li>
+</ol>
+</div></section>
+
+<section class="slide" data-title="PPF: build it and shift it" data-sec="3 · Circular flow & PPF"><div class="wrap">
+<p class="eyebrow">Part 3 · Interactive</p><h2>Build the production possibilities frontier.</h2>
+<p class="lead">The PPF shows the combinations of coconuts and fish the island can produce with all its resources and current technology.</p>
+<div class="chartbox" data-chart="ppf"></div>
+<h3>How the frontier is built</h3>
+<ol class="steps">
+<li><b>Start with all fish:</b> Robinson 40 + Friday 25 = 65 fish, 0 coconuts. This is the top of the vertical axis.</li>
+<li><b>Want coconuts? Use the lowest-cost producer first.</b> Friday gives up only ½ fish per coconut. Moving Friday to coconuts gives (50 coconuts, 40 fish). This is the <b>kink</b>.</li>
+<li><b>For more coconuts, Robinson must switch</b>, at 2 fish per coconut. Ends at (70 coconuts, 0 fish).</li>
+<li>The slope changes from −½ to −2: <b>rising opportunity cost → a concave (bowed-out) frontier</b>. With many producers the frontier gets smoother.</li>
+</ol>
+<div class="callout tip"><b>Shift vs move</b>A better technology (drag the slider to 50 fish) moves the whole frontier outward; choosing a different point on the frontier is just a different allocation. Principle 10: more production possibilities → more to consume.</div>
+</div></section>
+
+<section class="slide" data-title="Quiz 3: Circular flow and PPF" data-sec="3 · Circular flow & PPF"><div class="wrap">
+<p class="eyebrow">Quiz 3</p><h2>Circular flow &amp; PPF</h2>
+<div class="quiz" data-bank="C"></div>
+</div></section>
+
+<!-- PART 4 -->
+<section class="slide" data-title="How to read the graphs" data-sec="4 · Graphs, demand, supply"><div class="wrap">
+<p class="eyebrow">Part 4 · Graph guide</p><h2>How to read a supply and demand graph.</h2>
+<p class="lead">Almost every exam graph is built from the same six ingredients. Learn them once.</p>
+<div class="lab"><div id="guidesvg"></div>
+<div><ul class="legend" style="margin-top:0">
+<li><b style="width:22px">①</b><div><b>Vertical axis = price (P)</b><span>What a buyer pays or a seller gets per unit (zł, $).</span></div></li>
+<li><b style="width:22px">②</b><div><b>Horizontal axis = quantity (Q)</b><span>Units per period (per month, per year).</span></div></li>
+<li><b style="width:22px">③</b><div><b style="color:#0071e3">Demand curve D</b><span>Slopes down: higher price → lower quantity demanded. Each point says "at this price buyers want this quantity". It shows plans, not actual sales.</span></div></li>
+<li><b style="width:22px">④</b><div><b style="color:#ff9500">Supply curve S</b><span>Slopes up: higher price → higher quantity supplied.</span></div></li>
+<li><b style="width:22px">⑤</b><div><b>Equilibrium E</b><span>Where the curves cross: Q demanded = Q supplied. Gives P* and Q*. The market clears.</span></div></li>
+<li><b style="width:22px">⑥</b><div><b>The horizontal gap</b><span>At a price above P*, the distance between S and D is the surplus. Below P*, it is the shortage.</span></div></li>
+</ul></div></div>
+<div class="callout tip"><b>Reading trick</b>To read a graph, pick a price on the vertical axis, go <b>across</b> to the curve, then <b>down</b> to read the quantity. Quantities are always compared horizontally at the same price.</div>
+<h3>The most-tested distinction: move along vs shift</h3>
+<div class="grid2">
+<div class="card"><h4>Movement along a curve</h4><p>Caused <b>only by a change in the good's own price</b>. Quantity demanded/supplied changes; the curve stays.</p></div>
+<div class="card"><h4>Shift of the curve</h4><p>Caused by <b>anything else</b> (income, other prices, tastes, expectations, number of buyers/sellers, input prices, technology, regulation). The whole curve moves.</p></div>
+</div>
+<p><b>Try it:</b> the lab below moves a point along D when you change the price, and shifts D when you change income.</p>
+<div class="chartbox" data-chart="move"></div>
+</div></section>
+
+<section class="slide" data-title="Demand: individual to market" data-sec="4 · Graphs, demand, supply"><div class="wrap">
+<p class="eyebrow">Part 4 · Demand</p><h2>From individual demand to market demand.</h2>
+<div class="def"><b>Quantity demanded</b> = the amount of a good buyers are willing and able to purchase at a given price. The <b>market</b> demand is the sum of all individual demands.</div>
+<ol class="steps">
+<li><b>Individual schedule:</b> a table of price → quantity for one buyer (Ada, Bob).</li>
+<li><b>Individual curve:</b> plot it, price on the vertical axis.</li>
+<li><b>Market curve:</b> at each price, <b>add quantities</b> (sum the curves horizontally; never add prices).</li>
+</ol>
+<table><tr><th>Price (zł)</th><th>Ada</th><th>Bob</th><th>Market</th></tr>
+<tr><td>0</td><td>20</td><td>15</td><td><b>35</b></td></tr><tr><td>4</td><td>15</td><td>12</td><td><b>27</b></td></tr><tr><td>8</td><td>10</td><td>9</td><td><b>19</b></td></tr><tr><td>12</td><td>5</td><td>6</td><td><b>11</b></td></tr><tr><td>16</td><td>0</td><td>3</td><td><b>3</b></td></tr><tr><td>20</td><td>0</td><td>0</td><td><b>0</b></td></tr></table>
+<div class="chartbox" data-chart="dem"></div>
+</div></section>
+
+<section class="slide" data-title="Shifts in demand" data-sec="4 · Graphs, demand, supply"><div class="wrap">
+<p class="eyebrow">Part 4 · Demand</p><h2>What shifts the demand curve?</h2>
+<p class="lead">Everything except the good's own price. Right shift = more demanded at every price.</p>
+<table><tr><th>Factor</th><th>Change</th><th>Effect on demand</th></tr>
+<tr><td>Income, <b>normal</b> good (ice cream)</td><td>↑ income</td><td class="r">shifts right →</td></tr>
+<tr><td>Income, <b>inferior</b> good (bus rides, raw potatoes)</td><td>↑ income</td><td class="l">← shifts left</td></tr>
+<tr><td>Price of a <b>substitute</b> (frozen yogurt)</td><td>↓ price</td><td class="l">← shifts left</td></tr>
+<tr><td>Price of a <b>complement</b> (hot fudge)</td><td>↓ price</td><td class="r">shifts right →</td></tr>
+<tr><td>Tastes (fashion, health awareness, weather)</td><td>more favorable</td><td class="r">shifts right →</td></tr>
+<tr><td>Expectations (future prices/income)</td><td>e.g. higher future price expected</td><td class="r">buy more today →</td></tr>
+<tr><td>Number of buyers</td><td>↑</td><td class="r">shifts right →</td></tr></table>
+<div class="grid2">
+<div class="card"><h4>Normal vs inferior</h4><p>Normal: demand rises with income. Inferior: demand falls as income rises.</p></div>
+<div class="card"><h4>Substitutes vs complements</h4><p>Substitutes: a price fall of one <i>reduces</i> demand for the other. Complements: a price fall of one <i>raises</i> demand for the other (used together).</p></div>
+</div>
+<h3>Case: two ways to reduce smoking</h3>
+<div class="grid2">
+<div class="card"><h4>Shift the demand curve</h4><p>Public announcements, mandatory health warnings, advertising bans: demand shifts left at every price.</p></div>
+<div class="card"><h4>Move along the demand curve</h4><p>Raise price through taxes. Studies: +10% price → −4% quantity demanded (−12% for teenagers).</p></div>
+</div>
+<div class="callout warn"><b>Careful</b>Tobacco and marijuana: some argue they are substitutes (high cigarette prices push people to marijuana). The empirical evidence in the lecture suggests <b>complements</b>: lower cigarette prices go with greater marijuana use.</div>
+</div></section>
+
+<section class="slide" data-title="Supply: firm to market" data-sec="4 · Graphs, demand, supply"><div class="wrap">
+<p class="eyebrow">Part 4 · Supply</p><h2>From a firm's supply to market supply.</h2>
+<div class="def"><b>Quantity supplied</b> = the amount sellers are willing and able to sell at a given price. <b>Market (industry) supply</b> = sum of all firms' supplies, added horizontally.</div>
+<table><tr><th>Price (zł)</th><th>Gagen (000s)</th><th>Hrycan (000s)</th><th>Market (000s)</th></tr>
+<tr><td>4</td><td>0</td><td>0</td><td><b>0</b></td></tr><tr><td>8</td><td>3</td><td>0</td><td><b>3</b></td></tr><tr><td>12</td><td>6</td><td>10</td><td><b>16</b></td></tr><tr><td>16</td><td>9</td><td>20</td><td><b>29</b></td></tr></table>
+<p class="hint">Why do the curves start at different prices? A firm with higher costs only starts selling when the price covers them. Hrycan starts at 8, Gagen at 4.</p>
+<div class="chartbox" data-chart="sup"></div>
+<h3>What shifts supply?</h3>
+<table><tr><th>Factor</th><th>Change</th><th>Effect on supply</th></tr>
+<tr><td>Input prices (cream, sugar, labor, machines)</td><td>↑</td><td class="l">← shifts left (costlier to produce)</td></tr>
+<tr><td>Technology</td><td>improves</td><td class="r">shifts right →</td></tr>
+<tr><td>Regulations</td><td>more costly requirements</td><td class="l">← shifts left</td></tr>
+<tr><td>Expectations</td><td>about future demand/prices</td><td>can shift supply today</td></tr>
+<tr><td>Number of sellers</td><td>↑ (entry)</td><td class="r">shifts right →</td></tr></table>
+</div></section>
+
+<section class="slide" data-title="Quiz 4: Demand and supply" data-sec="4 · Graphs, demand, supply"><div class="wrap">
+<p class="eyebrow">Quiz 4</p><h2>Demand &amp; supply</h2>
+<div class="quiz" data-bank="D"></div>
+</div></section>
+
+<!-- PART 5 -->
+<section class="slide" data-title="Market equilibrium" data-sec="5 · Equilibrium"><div class="wrap">
+<p class="eyebrow">Part 5 · Equilibrium</p><h2>Market equilibrium: the lab.</h2>
+<div class="def"><b>Equilibrium</b> = the price P* and quantity Q* at which quantity demanded = quantity supplied. At P* the market clears: buyers have bought all they want and sellers have sold all they want (Principle 7).</div>
+<ol class="steps">
+<li><b>Pick an event</b> (or shift a curve yourself). Ask first: <i>which curve moves, and which way?</i></li>
+<li><b>Predict</b> the new P* and Q* before reading the answer.</li>
+<li><b>Turn on "Test a price"</b> to see what happens off-equilibrium: surplus pushes price down, shortage pushes price up, until the market is back at equilibrium (Principle 6).</li>
+</ol>
+<div class="chartbox" data-chart="eq"></div>
+<div class="callout tip"><b>Numbers used in the lab</b>Demand Q<sup>D</sup> = 100 − 5P, supply Q<sup>S</sup> = 5P − 20 → solve 100 − 5P = 5P − 20 → <b>P* = 12, Q* = 40</b>. Shifting demand right by d or supply right by s gives P* = (120 + d − s)/10 and Q* = 40 + (d + s)/2.</div>
+</div></section>
+
+<section class="slide" data-title="Double shifts" data-sec="5 · Equilibrium"><div class="wrap">
+<p class="eyebrow">Part 5 · Equilibrium</p><h2>Single and double shifts.</h2>
+<p class="lead">Rule: when <b>one</b> curve shifts, both P and Q are determined. When <b>both</b> shift, one of them is certain and the other is ambiguous. It depends on slopes and the size of the shifts.</p>
+<table><tr><th>What shifts</th><th>Price P*</th><th>Quantity Q*</th></tr>
+<tr><td>Demand → right</td><td class="r">↑</td><td class="r">↑</td></tr>
+<tr><td>Demand ← left</td><td class="l">↓</td><td class="l">↓</td></tr>
+<tr><td>Supply → right (technology, cheaper inputs)</td><td class="l">↓</td><td class="r">↑</td></tr>
+<tr><td>Supply ← left (costlier inputs, regulation)</td><td class="r">↑</td><td class="l">↓</td></tr>
+<tr><td>Demand → and supply →</td><td>? ambiguous</td><td class="r">↑ certain</td></tr>
+<tr><td>Demand ← and supply ←</td><td>? ambiguous</td><td class="l">↓ certain</td></tr>
+<tr><td>Demand → and supply ←</td><td class="r">↑ certain</td><td>? ambiguous</td></tr>
+<tr><td>Demand ← and supply →</td><td class="l">↓ certain</td><td>? ambiguous</td></tr></table>
+<div class="callout key"><b>Memory trick</b>Same direction (both right or both left) → <b>quantity</b> is certain. Opposite directions → <b>price</b> is certain. Use the event lab in the previous slide: select an event, then press an extra shift button to build a double shift.</div>
+<h3>Off equilibrium</h3>
+<div class="grid2">
+<div class="card"><h4>Price above P*: surplus (excess supply)</h4><p>Q<sup>S</sup> &gt; Q<sup>D</sup>. Sellers can't sell all they want, so they cut prices. Price falls (a move along both curves) until it reaches P*.</p></div>
+<div class="card"><h4>Price below P*: shortage (excess demand)</h4><p>Q<sup>D</sup> &gt; Q<sup>S</sup>. Too many buyers chase too few goods, so sellers raise prices. Price rises until it reaches P*.</p></div>
+</div>
+</div></section>
+
+<section class="slide" data-title="Case: the coffee market" data-sec="5 · Equilibrium"><div class="wrap">
+<p class="eyebrow">Part 5 · Case study</p><h2>Why coffee prices spike and then fall back.</h2>
+<p class="lead">Brazil is the world's largest producer. A frost or drought destroys trees → supply falls → price jumps. Then the market adjusts. Step through the four stages.</p>
+<div class="chartbox" data-chart="coffee"></div>
+<div class="grid2">
+<div class="card"><h4>Facts from the lecture</h4><p>NY price per pound: 68¢ (1975) → $1.23 (1976) → $2.70 (1977) after the July 1975 frost. Prices jumped again in 1986 after the 1985 drought; 1994–95 about double the 1993 level; and by 2002 a 30-year low of 45¢.</p></div>
+<div class="card"><h4>Key idea: elasticity changes over time</h4><p>Short run: trees are fixed and consumers change habits slowly, so both curves are steep (inelastic) and the price spike is large. Longer run: supply and demand are flatter, so the price comes down; in the long run new trees mature and price returns to its cost-based level.</p></div>
+</div>
+</div></section>
+
+<section class="slide" data-title="Quiz 5: Equilibrium" data-sec="5 · Equilibrium"><div class="wrap">
+<p class="eyebrow">Quiz 5</p><h2>Equilibrium &amp; shifts</h2>
+<div class="quiz" data-bank="E"></div>
+</div></section>
+
+<!-- PART 6 -->
+<section class="slide" data-title="Price floors and ceilings" data-sec="6 · Controls & taxes"><div class="wrap">
+<p class="eyebrow">Part 6 · Price controls</p><h2>Price floors and price ceilings.</h2>
+<div class="grid2">
+<div class="card"><h4>Price floor = legal <u>minimum</u> price</h4><p>Lobbied by producers who think the market price is too low. If set <b>above</b> P*, quantity supplied &gt; quantity demanded → <b>surplus</b>. Example: minimum wage.</p></div>
+<div class="card"><h4>Price ceiling = legal <u>maximum</u> price</h4><p>Lobbied by consumers who think the price is too high. If set <b>below</b> P*, quantity demanded &gt; quantity supplied → <b>shortage</b>. Example: rent control.</p></div>
+</div>
+<div class="callout warn"><b>Classic trap</b>A control only matters if it is <b>binding</b>: a floor <u>below</u> P* or a ceiling <u>above</u> P* changes nothing. Try it in the lab.</div>
+<div class="chartbox" data-chart="ctrl"></div>
+<ol class="steps">
+<li>Find the equilibrium without controls (P* = 12, Q* = 40).</li>
+<li>Draw the control price as a horizontal line. Is it on the "binding" side of P*?</li>
+<li>If binding, read Q<sup>D</sup> and Q<sup>S</sup> at that price. The gap is the surplus (floor) or shortage (ceiling).</li>
+<li>Actual trading = the <b>smaller</b> of the two quantities (the short side of the market).</li>
+</ol>
+</div></section>
+
+<section class="slide" data-title="Minimum wage and rent control" data-sec="6 · Controls & taxes"><div class="wrap">
+<p class="eyebrow">Part 6 · Price controls</p><h2>Two real-world cases.</h2>
+<h3>Minimum wage (price floor in the labor market)</h3>
+<p>Impact depends on the skills of the worker; the biggest effect is on teenage labor (least skilled and experienced). Typical study: +10% minimum wage → <b>−1% to −3%</b> teen employment. It also raises the number of teenagers who look for jobs (some drop out of school), who displace others who become unemployed.</p>
+<div class="grid2">
+<div class="card"><h4 style="color:#168a3b">For</h4><ul><li>Raises income of the working poor</li><li>Counter-measure to the market power of large employers</li></ul></div>
+<div class="card"><h4 style="color:#c4291c">Against</h4><ul><li>Unemployment among unskilled workers</li><li>Discourages training; teenagers dropping out</li><li>Poorly targeted: fewer than ⅓ of minimum-wage earners live in poor families</li></ul></div>
+</div>
+<h3>Rent control (price ceiling in housing)</h3>
+<ol class="steps">
+<li><b>Short run:</b> supply of apartments and demand are inelastic, so effects are not obvious at first.</li>
+<li><b>Long run:</b> landlords build fewer new apartments and maintain existing ones less; low rents draw more people to the city and discourage sharing → large shortage and falling quality. ("The best way to destroy a city, other than bombing.")</li>
+<li><b>Rationing:</b> waiting lists and interviews, discrimination (children, social class, nationality, race), under-the-table payments to managers (which push the total price toward the equilibrium price).</li>
+</ol>
+<div class="callout tip"><b>Exam angle</b>For any control: say which curve the price line cuts, whether it is binding, the direction and size of the gap, and then the side effects (rationing, quality, unemployment).</div>
+</div></section>
+
+<section class="slide" data-title="Taxes and tax incidence" data-sec="6 · Controls & taxes"><div class="wrap">
+<p class="eyebrow">Part 6 · Taxes</p><h2>Who really pays the tax?</h2>
+<div class="def"><b>Tax incidence</b> = how the burden of a tax is distributed between buyers and sellers.</div>
+<ol class="steps">
+<li><b>Gross price (demand price) P<sup>D</sup></b> = what the buyer pays. <b>Net price (supply price) P<sup>S</sup></b> = what the seller keeps after the tax is passed on. So <b>P<sup>D</sup> − P<sup>S</sup> = t</b>.</li>
+<li><b>Tax on sellers:</b> shift the (inverse) supply curve <u>up</u> by t. Sellers need P<sup>S</sup> + t to supply a given quantity.</li>
+<li><b>Tax on buyers:</b> shift the (inverse) demand curve <u>down</u> by t. Buyers will only pay P<sup>D</sup> − t to the seller.</li>
+<li>The new equilibrium quantity Q′ is smaller. <b>Both versions give the same Q′, P<sup>D</sup> and P<sup>S</sup></b>: the burden doesn't depend on who formally pays.</li>
+</ol>
+<div class="chartbox" data-chart="tax"></div>
+<div class="callout key"><b>Key takeaways</b>① Buyers pay more (P<sup>D</sup> − P*), sellers get less (P* − P<sup>S</sup>). ② Government revenue = t × Q′ (the shaded rectangle). ③ Quantity falls, so taxes distort decisions (Principle 7). ④ The burden falls more on the less responsive (steeper) side. That is a preview of elasticity (next lecture).</div>
+</div></section>
+
+<section class="slide" data-title="Quiz 6: Controls and taxes" data-sec="6 · Controls & taxes"><div class="wrap">
+<p class="eyebrow">Quiz 6</p><h2>Price controls &amp; taxes</h2>
+<div class="quiz" data-bank="F"></div>
+</div></section>
+
+<!-- Cheat sheet -->
+<section class="slide" data-title="Cheat sheet" data-sec="Review"><div class="wrap">
+<p class="eyebrow">Review</p><h2>One-page cheat sheet.</h2>
+<div class="grid2">
+<div class="card"><h4>Core definitions</h4><ul>
+<li><b>Scarcity</b>: limited resources vs unlimited wants</li>
+<li><b>Opportunity cost</b>: next best alternative given up</li>
+<li><b>Marginal thinking</b>: act if MB &gt; MC</li>
+<li><b>Comparative advantage</b>: lower opportunity cost</li>
+<li><b>Equilibrium</b>: Q<sup>D</sup> = Q<sup>S</sup>; no one gains by changing</li>
+<li><b>Market failure</b>: externality, market power</li>
+<li><b>Positive</b>: testable "is" · <b>Normative</b>: value-based "should"</li></ul></div>
+<div class="card"><h4>Formulas &amp; rules</h4><ul>
+<li>Opp. cost = (give up) ÷ (gain)</li>
+<li>Market demand/supply = sum of quantities at each price</li>
+<li>Surplus = Q<sup>S</sup> − Q<sup>D</sup> (at price above P*)</li>
+<li>Shortage = Q<sup>D</sup> − Q<sup>S</sup> (at price below P*)</li>
+<li>Tax: P<sup>D</sup> − P<sup>S</sup> = t; revenue = t × Q′</li>
+<li>PPF slope = opportunity cost; concave ⇒ rising opportunity cost</li></ul></div>
+</div>
+<div class="grid2" style="margin-top:18px">
+<div class="card"><h4>Shifts at a glance</h4><p><b>Demand shifts:</b> income (normal ↑/inferior ↓), substitutes, complements, tastes, expectations, number of buyers.<br><b>Supply shifts:</b> input prices, technology, regulation, expectations, number of sellers.<br><b>Own price</b> → movement along the curve only.</p></div>
+<div class="card"><h4>Traps the test loves</h4><ul>
+<li>Shift vs movement along the curve</li>
+<li>Non-binding floor/ceiling has no effect</li>
+<li>Double shift: only one of P, Q is certain</li>
+<li>Positive ≠ true</li>
+<li>Substitutes vs complements direction</li>
+<li>Add curves horizontally (quantities), not vertically</li></ul></div>
+</div>
+</div></section>
+
+<section class="slide" data-title="Mock test" data-sec="Review"><div class="wrap">
+<p class="eyebrow">Final check</p><h2>Mock test: 12 random questions.</h2>
+<p class="lead">Drawn from all six quizzes. Restart for a new random set. The score is converted to the course grading scale (50% → 3.0, 60% → 3.5, 70% → 4.0, 80% → 4.5, 90% → 5.0).</p>
+<div class="quiz" data-bank="MOCK"></div>
+<div class="callout tip"><b>Missed something?</b>Use the Contents menu to jump back to that part, redo its interactive graph, and retry.</div>
+</div></section>
+
+</div>
+<div id="nav"><button id="prev" aria-label="Previous">‹</button><span id="cnt"></span><button id="next" aria-label="Next">›</button></div>
+
+<script>
+(function(){
+'use strict';
+const $=(s,r)=>(r||document).querySelector(s),$$=(s,r)=>[...(r||document).querySelectorAll(s)];
+const C={blue:'#0071e3',orange:'#ff9500',green:'#34c759',red:'#ff3b30',purple:'#af52de',teal:'#30b0c7',grey:'#8e8e93'};
+const n1=v=>String(Math.round(v*10)/10);
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+
+/* ---------- SVG helpers ---------- */
+function frame(o){
+  const W=560,H=400,L=54,R=20,T=16,B=48;
+  const sx=x=>L+x/o.xmax*(W-L-R),sy=y=>H-B-y/o.ymax*(H-T-B);
+  let s='';
+  for(let x=0;x<=o.xmax+1e-9;x+=o.xs)s+=`<line class="grid" x1="${sx(x)}" x2="${sx(x)}" y1="${sy(0)}" y2="${sy(o.ymax)}"/><text class="tick" x="${sx(x)}" y="${H-B+17}" text-anchor="middle">${x}</text>`;
+  for(let y=0;y<=o.ymax+1e-9;y+=o.ys)s+=`<line class="grid" y1="${sy(y)}" y2="${sy(y)}" x1="${sx(0)}" x2="${sx(o.xmax)}"/><text class="tick" x="${L-8}" y="${sy(y)+4}" text-anchor="end">${y}</text>`;
+  s+=`<line class="axis" x1="${sx(0)}" y1="${sy(0)}" x2="${sx(o.xmax)}" y2="${sy(0)}"/><line class="axis" x1="${sx(0)}" y1="${sy(0)}" x2="${sx(0)}" y2="${sy(o.ymax)}"/>`;
+  s+=`<text class="alabel" x="${(L+W-R)/2}" y="${H-8}" text-anchor="middle">${o.xl}</text><text class="alabel" transform="translate(14 ${(T+H-B)/2}) rotate(-90)" text-anchor="middle">${o.yl}</text>`;
+  return {sx,sy,s,xmax:o.xmax,ymax:o.ymax};
+}
+function path(f,F,o){o=o||{};const pts=[],lo=o.pmin||0,hi=o.pmax==null?F.ymax:o.pmax;
+  for(let P=lo;P<=hi+1e-9;P+=0.25){const Q=f(P);if(Q<-1e-9||Q>F.xmax+1e-9)continue;pts.push(F.sx(Q).toFixed(1)+' '+F.sy(P).toFixed(1))}
+  return pts.length?'M'+pts.join('L'):''}
+const CV=(F,f,c,w,dash,o)=>{const d=path(f,F,o);return d?`<path d="${d}" fill="none" stroke="${c}" stroke-width="${w||3}"${dash?` stroke-dasharray="${dash}"`:''} stroke-linecap="round" stroke-linejoin="round"/>`:''};
+const T=(x,y,t,c,a,sz)=>`<text class="lbl" x="${x.toFixed(1)}" y="${y.toFixed(1)}" fill="${c||'#1d1d1f'}" text-anchor="${a||'start'}"${sz?` font-size="${sz}"`:''}>${t}</text>`;
+const DOT=(x,y,c,r)=>`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r||6}" fill="${c}" stroke="#fff" stroke-width="2.5"/>`;
+const LN=(F,x1,y1,x2,y2,c,w,dash)=>`<line x1="${F.sx(x1).toFixed(1)}" y1="${F.sy(y1).toFixed(1)}" x2="${F.sx(x2).toFixed(1)}" y2="${F.sy(y2).toFixed(1)}" stroke="${c}" stroke-width="${w||1.5}"${dash?` stroke-dasharray="${dash}"`:''} stroke-linecap="round"/>`;
+const RECT=(F,x1,y1,x2,y2,c,op)=>`<rect x="${F.sx(Math.min(x1,x2)).toFixed(1)}" y="${F.sy(Math.max(y1,y2)).toFixed(1)}" width="${Math.abs(F.sx(x2)-F.sx(x1)).toFixed(1)}" height="${Math.abs(F.sy(y1)-F.sy(y2)).toFixed(1)}" fill="${c}" fill-opacity="${op||.2}"/>`;
+const legend=a=>`<ul class="legend">${a.map(x=>`<li><i class="sw ${x[3]||''}" style="--c:${x[0]}"></i><div><b>${x[1]}</b><span>${x[2]}</span></div></li>`).join('')}</ul>`;
+const SVG=s=>`<svg viewBox="0 0 560 400" class="chart" role="img">${s}</svg>`;
+const arr=(a,b)=>a>b+1e-9?'▲':a<b-1e-9?'▼':'=';
+const LAB=(chart,side)=>`<div class="lab">${chart}<div>${side}</div></div>`;
+
+/* ---------- navigation ---------- */
+const slides=$$('.slide');let cur=0;
+const menu=$('#menu');
+(function(){let h='',last='';slides.forEach((s,i)=>{const sec=s.dataset.sec;if(sec!==last){h+=`<h6>${sec}</h6>`;last=sec}h+=`<a data-i="${i}">${s.dataset.title}</a>`});menu.innerHTML=h;
+  menu.addEventListener('click',e=>{const a=e.target.closest('a');if(a){go(+a.dataset.i);menu.classList.remove('open')}})})();
+$('#menubtn').onclick=()=>menu.classList.toggle('open');
+function go(i){i=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,k)=>s.classList.toggle('active',k===i));slides[i].scrollTop=0;cur=i;
+  $('#bar').style.width=((i+1)/slides.length*100)+'%';$('#cnt').textContent=(i+1)+' / '+slides.length;$('#secname').textContent='· '+slides[i].dataset.sec;
+  $$('#menu a').forEach(a=>a.classList.toggle('cur',+a.dataset.i===i));try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+window.__go=go;window.__goT=t=>{const i=slides.findIndex(s=>s.dataset.title===t);if(i>=0)go(i)};
+$('#prev').onclick=()=>go(cur-1);$('#next').onclick=()=>go(cur+1);
+document.addEventListener('keydown',e=>{const t=e.target.tagName;if(t==='INPUT'||t==='SELECT'||t==='TEXTAREA')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')go(cur+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1)});
+let tx=null;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>90&&!e.target.closest('input,svg'))go(cur+(dx<0?1:-1))},{passive:true});
+document.addEventListener('click',e=>{if(!e.target.closest('#menu,#menubtn'))menu.classList.remove('open')});
+
+/* ---------- quiz ---------- */
+const BANK={
+A:[
+{q:"What does scarcity mean?",o:["Goods are expensive","Society has limited resources, so not all unlimited wants can be satisfied","Only poor countries lack goods","The government rations goods"],a:1,e:"Scarcity = limited resources versus (practically) unlimited needs. It applies to every society and is why choices and trade-offs are unavoidable."},
+{q:"Economics is best defined as the study of…",o:["money and banks","how firms make profits","the allocation of scarce resources among competing ends","how governments set taxes"],a:2,e:"This is the lecture's definition. It is often described simply as the study of people's choices."},
+{q:"A student gives up a job paying 15 zł/hour to attend a 3-hour lecture. Ignoring other costs, the opportunity cost of the lecture is…",o:["0 zł, because lectures are free","45 zł, the value of the next best alternative given up","15 zł","tuition divided by the number of lectures"],a:1,e:"Opportunity cost = what you give up by not choosing the next best alternative: 3 × 15 = 45 zł. Nothing is truly 'free' if you give something up."},
+{q:"According to Principle 3, a rational agent takes an extra action only if…",o:["total benefit exceeds total cost","marginal benefit exceeds marginal cost","the action is cheap","other people are doing it"],a:1,e:"Rational agents think at the margin: compare the benefit of one more unit with the cost of one more unit."},
+{q:"The water–diamond paradox is resolved by noting that…",o:["diamonds are more useful than water","marginal benefit depends on how many units you already have","water is always free","governments set diamond prices"],a:1,e:"Water is plentiful, so an extra cup has a small marginal benefit; diamonds are rare, so an extra one has a large marginal benefit. Price follows marginal, not total, benefit."},
+{q:"Peltzman's study (seat belts: fewer deaths per accident but more accidents) illustrates…",o:["Principle 1: trade-offs","Principle 4: people respond to incentives","Principle 6: markets move toward equilibrium","Principle 9: spending is income"],a:1,e:"Safer conditions made risky driving less costly, so drivers responded by driving less carefully: an incentive effect."},
+{q:"Which of the following is a market failure mentioned in the lecture?",o:["Prices adjusting to demand","An externality such as pollution","Trade between families","Firms hiring workers"],a:1,e:"Externalities and market power are the two market failures in the lecture. Well-designed public policy can improve efficiency in such cases."},
+{q:"According to Principle 10, most of the differences in living standards between countries come from differences in…",o:["population size","productivity","government size","natural beauty"],a:1,e:"Where workers produce a large quantity of goods per unit of time, most people enjoy a high standard of living."},
+{q:"Why did centrally planned economies prove inefficient?",o:["Planners lacked the information about tastes and costs that prices carry in a market","People did not want goods","There was too much competition","Taxes were too low"],a:0,e:"Prices were dictated by planners instead of arising in markets, so the information normally conveyed by prices was missing (Principle 7)."}
+],
+B:[
+{q:"Which of these is a normative statement?",o:["A 10% rise in the minimum wage lowers teen employment by 1–3%","The government should raise the minimum wage","Frost in Brazil raised coffee prices","Rent control reduces housing quality in the long run"],a:1,e:"'Should' signals a value judgment. The others can be tested against evidence, so they are positive."},
+{q:"Why do economists often rely on natural experiments?",o:["Lab experiments are cheap","They can rarely run controlled experiments, and history can mimic one, helping separate causation from correlation","They avoid using data","They are used to test normative claims"],a:1,e:"Economists cannot easily manipulate variables as physicists do. Natural experiments such as a change in a law give quasi-experimental evidence."},
+{q:"In Oreopoulos' study, the 1947 UK reform raised the minimum school-leaving age from…",o:["13 to 14","14 to 15","15 to 16","16 to 18"],a:1,e:"Comparing those who turned 14 in 1946 with those who turned 14 in 1948, he estimated a return of about 10% to one extra year of education."},
+{q:"Why do economists make simplifying assumptions?",o:["To make models perfectly accurate","To focus on the most important factors, accepting a small error, like ignoring air friction","Because the economy is simple","To avoid mathematics"],a:1,e:"A clock that loses a minute a day beats one that doesn't run at all: a simplified model is useful even if imperfect."},
+{q:"Two economists disagree on whether taxes on the rich should be raised. The disagreement may come from…",o:["different positive views only","different values (normative views) only","either different positive views or different values","neither"],a:2,e:"Disagreement can arise from different views about how the world works (positive) and from different values about what policy should achieve (normative)."},
+{q:"What do LTCM (1998) and the 2007 crisis teach about economic models?",o:["Models are useless","Even sophisticated models can omit rare but severe events, so judgment is needed","Finance is not part of economics","Governments should ban models"],a:1,e:"LTCM's models said a run of bad news was extremely unlikely. A sensible economist knows even the best model can miss important possibilities."},
+{q:"Which description of theories and models is correct?",o:["A theory is a specific case; a model is a general principle","A theory is a general, abstract explanation; a model applies it to a specific case, often quantitatively","They are always identical","Models are qualitative and theories are quantitative"],a:1,e:"Theory: generalized statement, conceptual and qualitative. Model: application to a specific case, practical and quantitative."},
+{q:"A positive statement…",o:["must be true","can be confirmed or refuted by evidence (even if it turns out false)","expresses a value judgment","describes what should happen"],a:1,e:"Positive ≠ true. 'Tax cuts always raise revenue' is positive: evidence can refute it."}
+],
+C:[
+{q:"In the circular-flow model, households' spending on goods is…",o:["firms' costs","firms' revenue","government taxes","income of other households only"],a:1,e:"Principle 9 in the model: households' spending = firms' revenue, and firms' payments for factors = households' income."},
+{q:"In the circular flow, who owns the factors of production and sells them in the factor markets?",o:["Firms","Households","Government","Goods markets"],a:1,e:"Households own and sell labor, land and capital; firms hire and use them."},
+{q:"Robinson can harvest 20 coconuts or catch 40 fish per week. The opportunity cost of one fish is…",o:["2 coconuts","½ coconut","20 coconuts","1 coconut"],a:1,e:"Giving up 20 coconuts to gain 40 fish: 20 ÷ 40 = ½ coconut per fish."},
+{q:"Friday can harvest 50 coconuts or catch 25 fish. Who has the comparative advantage in coconuts?",o:["Robinson (cost 2 fish per coconut)","Friday (cost ½ fish per coconut)","Neither","Robinson, because he catches more fish"],a:1,e:"Friday: 25 ÷ 50 = ½ fish per coconut; Robinson: 40 ÷ 20 = 2 fish per coconut. The lower opportunity cost gives the comparative advantage."},
+{q:"Why is the island's PPF concave (bowed outward)?",o:["Because of taxes","The lowest-opportunity-cost producers are used first, so the opportunity cost rises as output of a good expands","Because resources are unlimited","Because fish are cheaper than coconuts"],a:1,e:"The slope steepens from −½ (Friday) to −2 (Robinson): rising opportunity cost."},
+{q:"A point inside the PPF is…",o:["not feasible","feasible but inefficient (unused potential)","feasible and efficient","reachable only with trade"],a:1,e:"Points on the frontier are efficient; inside = feasible but wasteful; outside = not feasible with current resources and technology."},
+{q:"Robinson learns a better fishing technique (50 fish per week). What happens to the island's PPF?",o:["Nothing","It shifts outward: maximum fish rises from 65 to 75, maximum coconuts stays 70","Maximum coconuts rises to 75","It becomes a straight line"],a:1,e:"Better technology in fishing lets the island produce more fish for any amount of coconuts. The frontier moves outward (Principle 10)."},
+{q:"Robinson catches 40 fish and Friday harvests 50 coconuts. They trade 20 fish for 20 coconuts. Robinson ends up with…",o:["20 fish and 20 coconuts","40 fish and 0 coconuts","20 fish and 30 coconuts","0 fish and 20 coconuts"],a:0,e:"Robinson: 40 − 20 = 20 fish, 0 + 20 = 20 coconuts. Friday ends with 20 fish and 30 coconuts. Neither could reach those bundles alone."}
+],
+D:[
+{q:"How is the market demand curve obtained from individual demand curves?",o:["Adding prices vertically","Adding quantities horizontally at each price","Averaging the curves","Taking the highest curve"],a:1,e:"At each price, sum the individual quantities demanded. Never add prices."},
+{q:"At a price of 8 zł Ada demands 10 cones and Bob 9. Market quantity demanded at 8 zł is…",o:["9","10","19","1"],a:2,e:"10 + 9 = 19."},
+{q:"The price of ice cream cones rises. This causes…",o:["a rightward shift of demand","a movement along the demand curve (lower quantity demanded)","a leftward shift of demand","a shift of supply"],a:1,e:"A change in the good's own price moves you along the curve. It never shifts the curve."},
+{q:"As income rises, demand for bus rides falls. Bus rides are…",o:["normal goods","inferior goods","complements","substitutes"],a:1,e:"Inferior good: demand falls as income rises, so the curve shifts left."},
+{q:"The price of hot fudge falls. What happens to demand for ice cream?",o:["Shifts left (substitutes)","Shifts right (complements)","Unchanged","A movement along the curve"],a:1,e:"Complements are used together: cheaper fudge → more ice cream demanded at any price → shift right."},
+{q:"The price of frozen yogurt falls. The demand for ice cream…",o:["shifts right","shifts left","is a movement along the curve","does not change"],a:1,e:"Substitutes: some buyers switch to the cheaper frozen yogurt, so demand for ice cream shifts left."},
+{q:"Which of these shifts the SUPPLY curve to the left?",o:["A rise in input prices","A technological advance","New firms entering the industry","A fall in input prices"],a:0,e:"Costlier inputs make production less profitable, so firms supply less at any price."},
+{q:"At 12 zł Gagen supplies 6 000 cones and Hrycan 10 000. Market supply at 12 zł is…",o:["6 000","10 000","16 000","60 000"],a:2,e:"Add quantities horizontally: 6 000 + 10 000 = 16 000."},
+{q:"A study finds that a 10% rise in cigarette prices cuts quantity demanded by about 4%. On a demand graph, this is…",o:["a shift of demand","a movement along the demand curve","a shift of supply","a change in tastes"],a:1,e:"A price change moves you along the curve. Health warnings and advertising bans would instead shift the curve."}
+],
+E:[
+{q:"If the market price is above the equilibrium price, there is…",o:["a shortage and prices rise","a surplus and prices fall","a shortage and prices fall","a surplus and prices rise"],a:1,e:"Quantity supplied exceeds quantity demanded. Sellers cut prices until equilibrium."},
+{q:"If the market price is below the equilibrium price…",o:["quantity supplied exceeds quantity demanded","excess demand: sellers can raise prices until equilibrium","there is a surplus","nothing happens"],a:1,e:"Too many buyers chasing too few goods: a shortage. Prices rise, quantity demanded falls and quantity supplied rises."},
+{q:"A technological improvement shifts supply to the right. The new equilibrium has…",o:["higher price, higher quantity","lower price, higher quantity","lower price, lower quantity","higher price, lower quantity"],a:1,e:"More supplied at each price → price falls (movement down along demand) and quantity rises."},
+{q:"Income rises and the good is normal. The new equilibrium has…",o:["higher price, higher quantity","lower price, higher quantity","lower price, lower quantity","higher price, lower quantity"],a:0,e:"Demand shifts right → move up along supply: both P* and Q* rise."},
+{q:"Demand and supply both shift to the right. What is certain?",o:["Price rises","Price falls","Quantity rises","Quantity falls"],a:2,e:"Both shifts increase quantity. The price effect depends on slopes and the size of the shifts."},
+{q:"Supply shifts left while demand shifts right. What is certain?",o:["Price rises","Price falls","Quantity rises","Quantity falls"],a:0,e:"Both shifts push the price up; the quantity effect is ambiguous."},
+{q:"Why did coffee prices spike so sharply right after a Brazilian frost?",o:["Demand rose","In the short run supply and demand are very inelastic, so a leftward shift of supply causes a large price jump","The government fixed a price","Taxes rose"],a:1,e:"Trees can't be replaced quickly and consumers change habits slowly. Later both curves flatten and, once new trees mature, the price returns to normal."},
+{q:"Demand is Q = 100 − 5P and supply is Q = 5P − 20. The equilibrium is…",o:["P = 10, Q = 50","P = 12, Q = 40","P = 15, Q = 25","P = 8, Q = 60"],a:1,e:"100 − 5P = 5P − 20 → 120 = 10P → P = 12 and Q = 100 − 60 = 40."},
+{q:"Demand rises to Q = 130 − 5P (supply is still Q = 5P − 20). The new equilibrium is…",o:["P = 12, Q = 40","P = 15, Q = 55","P = 13, Q = 65","P = 15, Q = 40"],a:1,e:"130 − 5P = 5P − 20 → 150 = 10P → P = 15; Q = 130 − 75 = 55."}
+],
+F:[
+{q:"A price floor set ABOVE the equilibrium price causes…",o:["a shortage","a surplus","no change","a fall in price below equilibrium"],a:1,e:"At the higher price quantity supplied exceeds quantity demanded."},
+{q:"A price ceiling set BELOW the equilibrium price causes…",o:["a shortage","a surplus","no change","a rise in supply"],a:0,e:"Quantity demanded exceeds quantity supplied; rationing mechanisms (queues, favoritism) develop."},
+{q:"A price floor set BELOW the equilibrium price…",o:["causes a surplus","has no effect because it is not binding","causes a shortage","raises the price"],a:1,e:"The market price is already above the floor, so the floor does not bind."},
+{q:"Typical studies find that a 10% increase in the minimum wage…",o:["raises teen employment by 1–3%","lowers teen employment by about 1–3%","has no effect","doubles unemployment"],a:1,e:"Teens are among the least skilled workers, so the minimum wage bites most in their labor market."},
+{q:"Which is a long-run effect of rent control?",o:["More new apartments are built","Landlords build and maintain less; shortage and rationing (waiting lists, discrimination, bribes) emerge","Demand for housing falls","Rents fall and quality rises"],a:1,e:"In the long run supply and demand respond: a large shortage and deteriorating quality."},
+{q:"A tax of t per unit is levied on sellers. Who bears the burden?",o:["Only sellers","Only buyers","Both; the split depends on how responsive demand and supply are","The government"],a:2,e:"Buyers pay more than before and sellers receive less than before."},
+{q:"Whether the tax is formally imposed on buyers or sellers, the incidence…",o:["differs","is the same: same demand price, supply price and quantity","falls entirely on whoever pays it","falls on the government"],a:1,e:"Shifting S up by t or D down by t gives the same equilibrium quantity, with P^D − P^S = t."},
+{q:"With a tax t, the demand price P^D and supply price P^S are related by…",o:["P^D = P^S","P^D − P^S = t","P^D + P^S = t","P^D = 2·P^S"],a:1,e:"The buyer pays P^D, the seller keeps P^S, and the wedge t goes to the government."},
+{q:"Demand Q = 100 − 5P, supply Q = 5P − 20 (equilibrium P = 12, Q = 40). A tax of 4 zł per unit is introduced. The new outcome is…",o:["P^D = 16, P^S = 12, Q = 40","P^D = 14, P^S = 10, Q = 30","P^D = 12, P^S = 8, Q = 40","P^D = 14, P^S = 10, Q = 40"],a:1,e:"The curves have equal slopes, so the burden is split equally: buyers +2, sellers −2, Q = 30. Revenue = 4 × 30 = 120 zł."}
+]};
+BANK.MOCK=[].concat(BANK.A,BANK.B,BANK.C,BANK.D,BANK.E,BANK.F);
+function grade(p){return p>=90?'5.0':p>=80?'4.5':p>=70?'4.0':p>=60?'3.5':p>=50?'3.0':'2'}
+function quiz(el,bank,pick){
+  const run=()=>{
+    let qs=pick?shuf(bank).slice(0,pick):bank.slice();let ok=0,done=0;
+    el.innerHTML=`<div class="qhead"><div class="score">Score <b>0</b> / ${qs.length}</div><button class="btn ghost restart">↻ Restart</button></div><div class="qlist"></div><div class="qfinal"></div>`;
+    const list=$('.qlist',el);
+    qs.forEach((q,qi)=>{
+      const order=shuf(q.o.map((_,i)=>i));
+      const d=document.createElement('div');d.className='q';
+      d.innerHTML=`<div class="qn">Question ${qi+1}</div><h4>${q.q}</h4><div class="opts">${order.map(i=>`<button class="opt" data-i="${i}">${q.o[i]}</button>`).join('')}</div><div class="exp"></div>`;
+      d.addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b||d.classList.contains('done'))return;
+        d.classList.add('done');const i=+b.dataset.i;const right=i===q.a;
+        $$('.opt',d).forEach(x=>{if(+x.dataset.i===q.a)x.classList.add('correct')});if(!right)b.classList.add('wrong');
+        $('.exp',d).innerHTML=(right?'<b>✓ Correct.</b> ':'<b>✗ Not quite.</b> Correct answer: <b>'+q.o[q.a]+'</b>. ')+q.e;
+        done++;if(right)ok++;$('.score b',el).textContent=ok;
+        if(done===qs.length){const p=Math.round(ok/qs.length*100);
+          $('.qfinal',el).innerHTML=`<div class="card"><div class="big">${ok} / ${qs.length}</div><p>${p}% · on the course scale that's <b>${grade(p)}</b>. ${p>=90?'Excellent!':p>=70?'Solid. Review the ones you missed.':'Go back to the explanations and the graph labs, then retry.'}</p></div>`;}});
+      list.appendChild(d)});
+    $('.restart',el).onclick=run;
+  };run();
+}
+$$('.quiz').forEach(el=>{const b=el.dataset.bank;quiz(el,BANK[b],b==='MOCK'?12:0)});
+
+/* ---------- Facebook calc ---------- */
+(function(){const m=$('#fbmin'),w=$('#fbwage');if(!m)return;
+  const f=()=>{$('#fbm').textContent=m.value;$('#fbw').textContent=w.value;const yr=m.value/60*w.value*365,tot=yr*254e6;
+    $('#fbout').innerHTML=`Per adult per year: <b>$${Math.round(yr).toLocaleString('en-US')}</b><br>All 254 M US adults: <b>$${(tot/1e12).toFixed(2)} trillion</b> per year`};
+  m.oninput=w.oninput=f;f()})();
+
+/* ---------- classifier ---------- */
+(function(){const el=$('#cls');if(!el)return;
+  const S=[["A 10% rise in the minimum wage lowers teenage employment by 1–3%.",'P',"Testable against data. (Studies find roughly this.)"],
+  ["The government should raise the minimum wage to help the working poor.",'N',"'Should' = value judgment."],
+  ["Rent control reduces the quality of housing in the long run.",'P',"A claim about how the world works; evidence can support or refute it."],
+  ["Taxes on the rich ought to be higher because inequality is unfair.",'N',"'Ought' and 'unfair' are values."],
+  ["A frost in Brazil raises the price of coffee.",'P',"A description of cause and effect, checkable."],
+  ["Tax cuts always increase tax revenue.",'P',"Positive, even if it is probably false. Positive ≠ true."]];
+  S.forEach(s=>{const d=document.createElement('div');d.className='st';d.style.width='100%';
+    d.innerHTML=`<div>${s[0]}</div><div class="btns"><button class="btn ghost" data-v="P">Positive</button><button class="btn ghost" data-v="N">Normative</button></div><div class="fb"></div>`;
+    d.addEventListener('click',e=>{const b=e.target.closest('button');if(!b||d.dataset.done)return;d.dataset.done=1;const ok=b.dataset.v===s[1];d.classList.add(ok?'ok':'no');
+      const f=$('.fb',d);f.style.display='block';f.innerHTML=(ok?'✓ ':'✗ ')+'This is <b>'+(s[1]==='P'?'positive':'normative')+'</b>. '+s[2]});el.appendChild(d)})})();
+
+/* ---------- circular flow ---------- */
+(function(){const host=$('#flowsvg');if(!host)return;
+  const F=[
+  {id:'labor',k:'g',d:'M190 220 V75 H330',x:260,y:92,l:'Labor, land, capital',t:'<b>Real flow.</b> Households own all factors of production and sell them in the factor markets.'},
+  {id:'income',k:'b',d:'M330 45 H110 V220',x:220,y:36,l:'Income',t:'<b>Money flow.</b> Payment for factors comes back to households as income (wages, rent, profit). Principle 9: firms\' spending = households\' income.'},
+  {id:'factors',k:'g',d:'M570 75 H710 V220',x:640,y:92,l:'Factors of production',t:'<b>Real flow.</b> Firms hire and use the factors of production bought in factor markets.'},
+  {id:'wages',k:'b',d:'M790 220 V45 H570',x:680,y:36,l:'Wages, rent and profit',t:'<b>Money flow.</b> Firms pay for factors: wages for labor, rent for land, profit/interest for capital.'},
+  {id:'products',k:'g',d:'M710 320 V500 H570',x:640,y:492,l:'Products',t:'<b>Real flow.</b> Firms produce and sell goods and services to the goods market.'},
+  {id:'revenue',k:'b',d:'M570 520 H790 V320',x:680,y:540,l:'Revenue',t:'<b>Money flow.</b> What buyers spend on goods becomes firms\' revenue.'},
+  {id:'spending',k:'b',d:'M110 320 V520 H330',x:220,y:540,l:'Spending',t:'<b>Money flow.</b> Households spend their income on goods. Principle 9: one person\'s spending is another\'s income.'},
+  {id:'goods',k:'g',d:'M330 500 H190 V320',x:260,y:492,l:'Goods',t:'<b>Real flow.</b> Households buy and consume goods and services.'},
+  {id:'taxes',k:'b',d:'M260 285 H360',x:310,y:302,l:'Taxes',t:'<b>Money flow.</b> Households pay taxes to the government (to keep the model simple, firms\' taxes are omitted).'},
+  {id:'transfers',k:'b',d:'M360 255 H260',x:310,y:247,l:'Transfers',t:'<b>Money flow.</b> Government pays transfers (benefits, pensions) to households.'},
+  {id:'pubspend',k:'b',d:'M430 305 V470',x:422,y:400,l:'Public spending',a:'end',t:'<b>Money flow.</b> The government buys goods in the goods market.'},
+  {id:'govgoods',k:'g',d:'M470 470 V305',x:478,y:400,l:'Goods',t:'<b>Real flow.</b> The goods the government buys (roads, schools, etc.) go to the government.'}];
+  const col={g:C.green,b:C.blue};
+  const box=(x,y,w,h,t,s1,s2)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14" fill="#fff" stroke="#d2d2d7" stroke-width="1.5"/><text class="boxlbl" x="${x+w/2}" y="${y+(s1?24:h/2+5)}" text-anchor="middle">${t}</text>${s1?`<text class="boxsub" x="${x+w/2}" y="${y+46}" text-anchor="middle">${s1}</text>`:''}${s2?`<text class="boxsub" x="${x+w/2}" y="${y+64}" text-anchor="middle">${s2}</text>`:''}`;
+  let s=`<svg viewBox="0 0 900 570" class="chart"><defs><marker id="mg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="${C.green}"/></marker><marker id="mb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="${C.blue}"/></marker></defs>`;
+  s+=box(330,30,240,60,'Markets for factors of production')+box(330,470,240,60,'Markets for goods')+box(40,220,220,100,'Households','• buy and consume goods','• own and sell factors')+box(640,220,220,100,'Firms','• produce and sell goods','• hire and use factors')+box(360,235,180,70,'Government');
+  F.forEach(f=>{s+=`<g class="flow" data-id="${f.id}"><path d="${f.d}" fill="none" stroke="transparent" stroke-width="18"/><path class="vis" d="${f.d}" fill="none" stroke="${col[f.k]}" stroke-width="3.5" marker-end="url(#m${f.k})"/><text class="lbl" x="${f.x}" y="${f.y}" fill="${col[f.k]}" text-anchor="${f.a||'middle'}" font-size="12">${f.l}</text></g>`});
+  host.innerHTML=s+'</svg>';
+  const info=$('#flowinfo');let idx=-1;
+  const order=['labor','factors','products','goods','spending','revenue','wages','income','taxes','transfers','pubspend','govgoods'];
+  const sel=id=>{$$('.flow',host).forEach(g=>g.classList.toggle('sel',g.dataset.id===id));const f=F.find(x=>x.id===id);if(f)info.innerHTML=`<b style="color:${col[f.k]}">${f.l}</b><br>${f.t}`};
+  host.addEventListener('click',e=>{const g=e.target.closest('.flow');if(g){idx=order.indexOf(g.dataset.id);sel(g.dataset.id)}});
+  $('#flowtour').onclick=()=>{idx=(idx+1)%order.length;sel(order[idx])};
+  $('#flowreset').onclick=()=>{idx=-1;sel(null);info.innerHTML='<b>Click an arrow</b><br>to see what flows along it.'}})();
+
+/* ---------- guide chart (static, annotated) ---------- */
+(function(){const host=$('#guidesvg');if(!host)return;
+  const F=frame({xmax:140,ymax:24,xs:20,ys:4,xl:'Quantity (Q)',yl:'Price (P)'});
+  const QD=P=>100-5*P,QS=P=>5*P-20;
+  const bd=(x,y,n)=>`<g><circle cx="${x}" cy="${y}" r="10" fill="#1d1d1f"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">${n}</text></g>`;
+  let s=F.s;
+  s+=`<rect x="${F.sx(20)}" y="${F.sy(16)-6}" width="${F.sx(60)-F.sx(20)}" height="12" fill="${C.red}" fill-opacity=".22"/>`;
+  s+=CV(F,QD,C.blue,3.5)+CV(F,QS,C.orange,3.5);
+  s+=LN(F,0,16,70,16,C.grey,1.2,'5 4');
+  s+=LN(F,40,0,40,12,C.grey,1.2,'4 4')+LN(F,0,12,40,12,C.grey,1.2,'4 4');
+  s+=DOT(F.sx(40),F.sy(12),'#1d1d1f',6.5);
+  s+=T(F.sx(20),F.sy(16)-12,'Q<tspan baseline-shift="sub" font-size="9">D</tspan>',C.blue,'middle')+T(F.sx(60),F.sy(16)-12,'Q<tspan baseline-shift="sub" font-size="9">S</tspan>',C.orange,'middle');
+  s+=T(F.sx(40)-8,F.sy(0)-8,'Q*','#1d1d1f','end')+T(F.sx(0)+8,F.sy(12)-6,'P*','#1d1d1f');
+  s+=T(F.sx(88),F.sy(3.5)-8,'D','#0071e3')+T(F.sx(88),F.sy(20.5)+14,'S','#ff9500');
+  s+=T(F.sx(64),F.sy(16)+4,'surplus at this price',C.red);
+  s+=bd(F.sx(0)+26,F.sy(22),1)+bd(F.sx(130),F.sy(0)-26,2)+bd(F.sx(80),F.sy(4)-22,3)+bd(F.sx(100),F.sy(20)-14,4)+bd(F.sx(40)+22,F.sy(12)+20,5)+bd(F.sx(40),F.sy(16)+22,6);
+  host.innerHTML=SVG(s)})();
+
+/* ---------- chart framework ---------- */
+function chart(sel,fn){$$('[data-chart="'+sel+'"]').forEach(fn)}
+
+/* move vs shift */
+chart('move',root=>{
+  root.innerHTML=LAB('',`
+  <div class="ctrl"><label>Price of the good (P): <b class="vp">10</b></label><input type="range" class="p" min="2" max="20" step="1" value="10"></div>
+  <div class="ctrl"><label>Income change: <b class="vi">0</b></label><input type="range" class="i" min="-30" max="30" step="5" value="0"></div>
+  <div class="ctrl"><label>Type of good</label><select class="t"><option value="1">Normal good</option><option value="-1">Inferior good</option></select></div>
+  <div class="read"></div>
+  ${legend([[C.blue,'Current demand curve','Where demand is right now.'],[C.grey,'Original demand curve (dashed)','Where it started; appears only after a shift.','dash'],['#1d1d1f','The dot','Quantity demanded at the current price on the current curve.','dot']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  const g=(c)=>$(c,root);
+  const render=()=>{const P=+g('.p').value,inc=+g('.i').value,sg=+g('.t').value,d=inc*sg;
+    g('.vp').textContent=P;g('.vi').textContent=(inc>0?'+':'')+inc;
+    const F=frame({xmax:140,ymax:24,xs:20,ys:4,xl:'Quantity demanded (Q)',yl:'Price (P)'});let s=F.s;
+    if(d!==0)s+=CV(F,p=>100-5*p,C.grey,2.5,'6 5')+T(F.sx(100-5*3),F.sy(3)+16,'D₀',C.grey);
+    s+=CV(F,p=>100+d-5*p,C.blue,3.5)+T(F.sx(100+d-15),F.sy(3)-6,d!==0?'D₁':'D',C.blue);
+    const q=100+d-5*P;s+=LN(F,0,P,Math.max(q,0),P,C.grey,1.2,'4 4')+LN(F,Math.max(q,0),0,Math.max(q,0),P,C.grey,1.2,'4 4')+DOT(F.sx(Math.max(q,0)),F.sy(P),'#1d1d1f',7);
+    slot.innerHTML=SVG(s);
+    g('.read').innerHTML=`Quantity demanded at P = ${P}: <b>${n1(q)}</b><br>`+(d===0?'Change the <b>price</b>: the dot slides <b>along</b> the curve.':'Income moved the <b>whole curve</b> '+(d>0?'right':'left')+' ('+(sg>0?'normal':'inferior')+' good). Now try moving the price: the dot moves along the <i>new</i> curve.')};
+  $$('input,select',root).forEach(e=>e.oninput=render);render()});
+
+/* PPF */
+chart('ppf',root=>{
+  root.innerHTML=LAB('',`
+  <div class="ctrl"><label>Robinson's maximum fish per week: <b class="vf">40</b></label><input type="range" class="fr" min="40" max="60" step="5" value="40"></div>
+  <div class="ctrl"><label>Test point: coconuts <b class="vc">30</b></label><input type="range" class="tc" min="0" max="80" value="30"></div>
+  <div class="ctrl"><label>Test point: fish <b class="vff">30</b></label><input type="range" class="tf" min="0" max="90" value="30"></div>
+  <div class="btns"><button class="btn ghost" data-p="k">On the frontier</button><button class="btn ghost" data-p="i">Inside</button><button class="btn ghost" data-p="o">Outside</button></div>
+  <div class="read"></div>
+  ${legend([[C.blue,'Island PPF (thick blue)','The most the whole island can produce: efficient combinations. Its two slopes are the two producers\' opportunity costs.'],[C.orange,'Robinson alone (dashed)','His own frontier: 20 coconuts or 40 fish (slope −2 fish per coconut).','dash'],[C.green,'Friday alone (dashed)','His own frontier: 50 coconuts or 25 fish (slope −½).','dash'],[C.blue,'Light-blue area','Feasible but inefficient points (inside the frontier).','box'],['#1d1d1f','Your test point','Green = on the frontier, orange = inside, red = outside.','dot']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  const cR=20,cF=50,fF=25;
+  const q=c=>$(c,root);
+  const render=()=>{const fR=+q('.fr').value,tc=+q('.tc').value,tf=+q('.tf').value;
+    q('.vf').textContent=fR;q('.vc').textContent=tc;q('.vff').textContent=tf;
+    const front=c=>c<=cF?fR+fF-(fF/cF)*c:(c<=cF+cR?fR-(fR/cR)*(c-cF):-1);
+    const F=frame({xmax:80,ymax:90,xs:10,ys:10,xl:'Coconuts (C)',yl:'Fish (F)'});
+    const px=(c,f)=>F.sx(c).toFixed(1)+','+F.sy(f).toFixed(1);
+    let s=F.s;
+    s+=`<polygon points="${px(0,0)} ${px(0,fR+fF)} ${px(cF,fR)} ${px(cF+cR,0)}" fill="${C.blue}" fill-opacity=".1"/>`;
+    s+=LN(F,0,40,20,0,C.orange,2,'6 5')+LN(F,0,25,50,0,C.green,2,'6 5');
+    s+=`<polyline points="${px(0,fR+fF)} ${px(cF,fR)} ${px(cF+cR,0)}" fill="none" stroke="${C.blue}" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>`;
+    s+=DOT(F.sx(cF),F.sy(fR),C.blue,6)+T(F.sx(cF)+8,F.sy(fR)-8,'kink ('+cF+', '+fR+')',C.blue);
+    s+=T(F.sx(0)+8,F.sy(fR+fF)-6,'max fish '+(fR+fF),C.blue)+T(F.sx(70),F.sy(0)-8,'max C 70',C.blue,'middle');
+    s+=T(F.sx(24),F.sy(fR+fF-12.5)-6,'slope −½ (Friday)',C.green)+T(F.sx(56),F.sy(fR/2)-4,'slope −'+n1(fR/cR)+' (Robinson)',C.orange);
+    const f0=front(tc);let st,col;
+    if(tc>cF+cR||tf>f0+0.75){st='<b>Outside the frontier: not feasible</b> with current resources and technology.';col=C.red}
+    else if(Math.abs(tf-f0)<=0.75){st='<b>On the frontier: feasible and efficient</b> (no wasted resources).';col=C.green}
+    else{st='<b>Inside the frontier: feasible but inefficient</b> (unused potential; you could produce more of something).';col=C.orange}
+    s+=DOT(F.sx(tc),F.sy(tf),col,8);
+    slot.innerHTML=SVG(s);
+    q('.read').innerHTML=st+'<br><span class="hint">Opportunity costs now: Robinson 1 fish = '+n1(cR/fR)+' coconut, 1 coconut = '+n1(fR/cR)+' fish. Friday 1 fish = 2 coconuts, 1 coconut = ½ fish. Frontier at '+tc+' coconuts: '+(f0>=0?n1(f0):'n/a')+' fish. (Within 1 unit counts as on the line.)</span>'};
+  $$('input',root).forEach(e=>e.oninput=render);
+  $$('[data-p]',root).forEach(b=>b.onclick=()=>{const fR=+q('.fr').value;const p=b.dataset.p;
+    if(p==='k'){q('.tc').value=50;q('.tf').value=fR}else if(p==='i'){q('.tc').value=30;q('.tf').value=20}else{q('.tc').value=60;q('.tf').value=50}render()});
+  render()});
+
+/* market demand */
+chart('dem',root=>{
+  root.innerHTML=LAB('',`
+  <div class="ctrl"><label>Price: <b class="vp">8</b> zł</label><input type="range" class="p" min="0" max="20" step="1" value="8"></div>
+  <div class="btns">${[0,4,8,12,16,20].map(v=>`<button class="btn ghost" data-v="${v}">${v}</button>`).join('')}</div>
+  <div class="read"></div>
+  ${legend([[C.purple,'Ada\'s demand','What Ada buys at each price. She stops buying at 16 zł.'],[C.teal,'Bob\'s demand','What Bob buys at each price. He stops at 20 zł.'],[C.blue,'Market demand (thick)','Ada + Bob, added <b>horizontally</b> at each price. Steeper bend at 16 where Ada drops out.'],[C.grey,'Dashed horizontal line','The price you chose. Where it meets each curve, read the quantity straight down.','dash']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  const A=P=>Math.max(0,20-1.25*P),B=P=>Math.max(0,15-0.75*P),M=P=>A(P)+B(P);
+  const q=c=>$(c,root);
+  const render=()=>{const P=+q('.p').value;q('.vp').textContent=P;
+    const F=frame({xmax:40,ymax:20,xs:5,ys:4,xl:'Quantity demanded per month (cones)',yl:'Price (zł)'});let s=F.s;
+    s+=CV(F,A,C.purple,2.5,null,{pmax:16})+CV(F,B,C.teal,2.5)+CV(F,M,C.blue,4.2);
+    s+=LN(F,0,P,40,P,C.grey,1.3,'5 4');
+    [[A(P),C.purple],[B(P),C.teal],[M(P),C.blue]].forEach(a=>{if(a[0]>0)s+=DOT(F.sx(a[0]),F.sy(P),a[1],5.5)});
+    s+=T(F.sx(24),F.sy(2.5),'Ada',C.purple)+T(F.sx(19),F.sy(14.5),'Bob',C.teal)+T(F.sx(30),F.sy(4),'Market',C.blue);
+    slot.innerHTML=SVG(s);
+    q('.read').innerHTML=`At <b>${P} zł</b>: Ada <b>${n1(A(P))}</b> + Bob <b>${n1(B(P))}</b> = market <b>${n1(M(P))}</b> cones`};
+  $$('input',root).forEach(e=>e.oninput=render);$$('[data-v]',root).forEach(b=>b.onclick=()=>{q('.p').value=b.dataset.v;render()});render()});
+
+/* market supply */
+chart('sup',root=>{
+  root.innerHTML=LAB('',`
+  <div class="ctrl"><label>Price: <b class="vp">12</b> zł</label><input type="range" class="p" min="0" max="20" step="1" value="12"></div>
+  <div class="btns">${[4,8,12,16,20].map(v=>`<button class="btn ghost" data-v="${v}">${v}</button>`).join('')}</div>
+  <div class="read"></div>
+  ${legend([[C.purple,'Gagen\'s supply','Starts selling above 4 zł (his costs are lower).'],[C.teal,'Hrycan\'s supply','Starts selling above 8 zł and reacts more strongly to price (flatter).'],[C.orange,'Market supply (thick)','Gagen + Hrycan, added horizontally; kinks where a new firm enters at 8 zł.'],[C.grey,'Dashed horizontal line','Your chosen price; read quantities straight down from where it meets the curves.','dash']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  const G=P=>Math.max(0,0.75*(P-4)),H=P=>Math.max(0,2.5*(P-8)),M=P=>G(P)+H(P);const q=c=>$(c,root);
+  const render=()=>{const P=+q('.p').value;q('.vp').textContent=P;
+    const F=frame({xmax:45,ymax:20,xs:5,ys:4,xl:'Quantity supplied per month (000s of cones)',yl:'Price (zł)'});let s=F.s;
+    s+=CV(F,G,C.purple,2.5,null,{pmin:4})+CV(F,H,C.teal,2.5,null,{pmin:8})+CV(F,M,C.orange,4.2,null,{pmin:4});
+    s+=LN(F,0,P,45,P,C.grey,1.3,'5 4');
+    [[G(P),C.purple],[H(P),C.teal],[M(P),C.orange]].forEach(a=>{if(a[0]>0)s+=DOT(F.sx(a[0]),F.sy(P),a[1],5.5)});
+    s+=T(F.sx(12),F.sy(19),'Gagen',C.purple)+T(F.sx(29),F.sy(19),'Hrycan',C.teal)+T(F.sx(38),F.sy(18),'Market',C.orange);
+    slot.innerHTML=SVG(s);
+    q('.read').innerHTML=`At <b>${P} zł</b>: Gagen <b>${n1(G(P))}</b> + Hrycan <b>${n1(H(P))}</b> = market <b>${n1(M(P))}</b> thousand cones`};
+  $$('input',root).forEach(e=>e.oninput=render);$$('[data-v]',root).forEach(b=>b.onclick=()=>{q('.p').value=b.dataset.v;render()});render()});
+
+/* equilibrium lab */
+chart('eq',root=>{
+  const EV=[['Choose an event…',0,0,'Pick an event, or shift a curve with the buttons.'],
+  ['Income rises (normal good)',15,0,'<b>Demand shifts right.</b> A normal good: more income → more demanded at every price.'],
+  ['Income rises (inferior good)',-15,0,'<b>Demand shifts left.</b> Inferior good: richer people buy less of it.'],
+  ['Price of a substitute falls',-15,0,'<b>Demand shifts left.</b> Buyers switch to the cheaper substitute.'],
+  ['Price of a complement falls',15,0,'<b>Demand shifts right.</b> Used together, so cheaper fudge → more ice cream.'],
+  ['Tastes shift toward the good (hot summer)',15,0,'<b>Demand shifts right.</b> Tastes, fashion and weather change demand.'],
+  ['More buyers enter the market',15,0,'<b>Demand shifts right.</b> More buyers → more demanded at every price.'],
+  ['Input prices rise',0,-15,'<b>Supply shifts left.</b> Production costs more, so firms supply less at each price.'],
+  ['Technology improves',0,15,'<b>Supply shifts right.</b> Lower costs → more supplied at each price.'],
+  ['New costly regulation',0,-15,'<b>Supply shifts left.</b> Regulations raise production costs.'],
+  ['New firms enter the industry',0,15,'<b>Supply shifts right.</b> More sellers → more supplied at each price.'],
+  ['The good\'s own price rises',0,0,'<b>No shift at all!</b> Own price only moves you along the curves, towards equilibrium.']];
+  root.innerHTML=LAB('',`
+  <div class="ctrl"><label>Event</label><select class="ev">${EV.map((e,i)=>`<option value="${i}">${e[0]}</option>`).join('')}</select></div>
+  <div class="read why">${EV[0][3]}</div>
+  <div class="btns"><button class="btn ghost" data-k="d-">D ←</button><button class="btn ghost" data-k="d+">D →</button><button class="btn ghost" data-k="s-">S ←</button><button class="btn ghost" data-k="s+">S →</button><button class="btn ghost" data-k="r">Reset</button></div>
+  <label style="font-size:14px;font-weight:600"><input type="checkbox" class="tt"> Test a price (off-equilibrium)</label>
+  <div class="ctrl tp" style="display:none"><label>Price tested: <b class="vp">16</b></label><input type="range" class="p" min="1" max="23" step="0.5" value="16"></div>
+  <div class="read out"></div>
+  ${legend([[C.blue,'Demand D','Quantity buyers want at each price. Slopes down. Shifts when anything other than price changes.'],[C.orange,'Supply S','Quantity sellers offer at each price. Slopes up.'],[C.grey,'Grey dashed = old curve','The curve before the shift (D₀, S₀). Compare it with the new one.','dash'],['#1d1d1f','Black dot = equilibrium','Where D and S cross: P* on the vertical axis, Q* on the horizontal.','dot'],[C.red,'Red band (test price)','Horizontal gap between S and D at the tested price = surplus or shortage.','box']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  let d=0,s0=0;const q=c=>$(c,root);
+  const QD=(P,x)=>100+x-5*P,QS=(P,x)=>5*P-20+x;
+  const render=()=>{
+    const F=frame({xmax:140,ymax:24,xs:20,ys:4,xl:'Quantity (Q)',yl:'Price (P)'});let s=F.s;
+    const moved=d!==0||s0!==0;
+    if(moved)s+=CV(F,P=>QD(P,0),C.grey,2.2,'6 5')+CV(F,P=>QS(P,0),C.grey,2.2,'6 5')+T(F.sx(85),F.sy(3)+14,'D₀',C.grey)+T(F.sx(85),F.sy(21)+14,'S₀',C.grey);
+    s+=CV(F,P=>QD(P,d),C.blue,3.5)+CV(F,P=>QS(P,s0),C.orange,3.5);
+    s+=T(F.sx(85+d),F.sy(3)-6,moved&&d?'D₁':'D',C.blue)+T(F.sx(85+s0),F.sy(21)-6,moved&&s0?'S₁':'S',C.orange);
+    const Pe=(120+d-s0)/10,Qe=40+(d+s0)/2;
+    s+=LN(F,0,Pe,Qe,Pe,C.grey,1.2,'4 4')+LN(F,Qe,0,Qe,Pe,C.grey,1.2,'4 4')+DOT(F.sx(Qe),F.sy(Pe),'#1d1d1f',7);
+    s+=T(F.sx(0)+8,F.sy(Pe)-6,'P*='+n1(Pe),'#1d1d1f')+T(F.sx(Qe),F.sy(0)-8,'Q*='+n1(Qe),'#1d1d1f','middle');
+    let txt='';const on=q('.tt').checked;q('.tp').style.display=on?'block':'none';
+    if(on){const p=+q('.p').value;q('.vp').textContent=p;const qd=Math.max(0,QD(p,d)),qs=Math.max(0,QS(p,s0));
+      s+=LN(F,0,p,140,p,C.purple,1.4,'5 4')+RECT(F,Math.min(qd,qs),p-0.45,Math.max(qd,qs),p+0.45,C.red,.35)+DOT(F.sx(qd),F.sy(p),C.blue,5)+DOT(F.sx(qs),F.sy(p),C.orange,5);
+      const gap=qs-qd;
+      if(Math.abs(gap)<1)txt='<br><b>At P = '+p+':</b> Q<sup>D</sup> ≈ Q<sup>S</sup> → equilibrium.';
+      else if(gap>0)txt='<br><b>At P = '+p+':</b> Q<sup>D</sup> = '+n1(qd)+', Q<sup>S</sup> = '+n1(qs)+' → <b>surplus of '+n1(gap)+'</b>. Sellers cut prices.';
+      else txt='<br><b>At P = '+p+':</b> Q<sup>D</sup> = '+n1(qd)+', Q<sup>S</sup> = '+n1(qs)+' → <b>shortage of '+n1(-gap)+'</b>. Sellers raise prices.'}
+    slot.innerHTML=SVG(s);
+    q('.out').innerHTML='New equilibrium: P* = <b>'+n1(Pe)+'</b> ('+arr(Pe,12)+' from 12), Q* = <b>'+n1(Qe)+'</b> ('+arr(Qe,40)+' from 40)'+txt};
+  q('.ev').onchange=e=>{const v=EV[+e.target.value];d=v[1];s0=v[2];q('.why').innerHTML=v[3];render()};
+  $$('[data-k]',root).forEach(b=>b.onclick=()=>{const k=b.dataset.k;
+    if(k==='r'){d=0;s0=0;q('.ev').value=0;q('.why').innerHTML=EV[0][3]}
+    else{const st=k[1]==='+'?10:-10;if(k[0]==='d')d=Math.max(-30,Math.min(30,d+st));else s0=Math.max(-30,Math.min(30,s0+st));q('.why').innerHTML='Manual shift: demand '+(d>0?'right':d<0?'left':'unchanged')+', supply '+(s0>0?'right':s0<0?'left':'unchanged')+'.'}render()});
+  q('.tt').onchange=render;q('.p').oninput=render;render()});
+
+/* coffee */
+chart('coffee',root=>{
+  const ST=[
+  {n:'1 · Before the frost',D:P=>100-5*P,S:P=>5*P-20,P:12,Q:40,t:'Normal market: price $P₀ (here 12) and quantity Q₀ (40). Demand and supply are reasonably flat.'},
+  {n:'2 · Very short run',D:P=>64-2*P,S:()=>25,P:19.5,Q:25,t:'Frost kills trees. <b>Supply is vertical</b> (a fixed, damaged stock of trees) and shifted left; demand is steep because habits change slowly. Result: <b>price jumps</b> from P₀ to P₁ (about 19.5).'},
+  {n:'3 · Intermediate run',D:P=>82-3.5*P,S:P=>4*P-23,P:14,Q:33,t:'Existing trees are harvested more intensively; consumers adjust. <b>Both curves are flatter</b>, so the price comes down from P₁ to P₂ (about 14) and quantity rises from Q₁ to Q₂.'},
+  {n:'4 · Long run',D:P=>100-5*P,S:P=>5*P-20,P:12,Q:40,t:'New trees mature, so supply returns to its original position, reflecting the cost of producing coffee (land, planting, care, competitive profit). <b>Price returns to P₀</b>.'}];
+  root.innerHTML=LAB('',`
+  <div class="btns">${ST.map((x,i)=>`<button class="btn ghost" data-i="${i}">${x.n}</button>`).join('')}</div>
+  <div class="read why"></div>
+  ${legend([[C.blue,'Demand','Gets flatter (more elastic) as consumers have time to change habits.'],[C.orange,'Supply','Vertical right after the frost (fixed trees), then flatter, then back to the normal supply once new trees grow.'],[C.grey,'Grey dashed = original curves','The pre-frost market for comparison.','dash'],['#1d1d1f','Black dot','Equilibrium at that stage.','dot']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  let st=0;
+  const render=()=>{const x=ST[st];$$('[data-i]',root).forEach((b,i)=>b.classList.toggle('on',i===st));
+    const F=frame({xmax:100,ymax:24,xs:10,ys:4,xl:'Quantity of coffee (Q)',yl:'Price of coffee (P)'});let s=F.s;
+    if(st>0&&st<3)s+=CV(F,ST[0].D,C.grey,2,'6 5')+CV(F,ST[0].S,C.grey,2,'6 5');
+    s+=CV(F,x.D,C.blue,3.5)+CV(F,x.S,C.orange,3.5);
+    s+=LN(F,0,x.P,x.Q,x.P,C.grey,1.2,'4 4')+LN(F,x.Q,0,x.Q,x.P,C.grey,1.2,'4 4')+DOT(F.sx(x.Q),F.sy(x.P),'#1d1d1f',7);
+    s+=T(F.sx(0)+8,F.sy(x.P)-6,'P = '+n1(x.P),'#1d1d1f')+T(F.sx(x.Q),F.sy(0)-8,'Q = '+n1(x.Q),'#1d1d1f','middle');
+    slot.innerHTML=SVG(s);q('.why').innerHTML='<b>'+x.n+'</b><br>'+x.t};
+  $$('[data-i]',root).forEach(b=>b.onclick=()=>{st=+b.dataset.i;render()});render()});
+
+/* price controls */
+chart('ctrl',root=>{
+  root.innerHTML=LAB('',`
+  <div class="btns"><button class="btn on" data-m="floor">Price floor (minimum)</button><button class="btn ghost" data-m="ceil">Price ceiling (maximum)</button></div>
+  <div class="ctrl"><label>Control price: <b class="vp">16</b></label><input type="range" class="p" min="2" max="22" step="0.5" value="16"></div>
+  <div class="read out"></div>
+  ${legend([[C.blue,'Demand D','Buyers\' plans at each price.'],[C.orange,'Supply S','Sellers\' plans at each price.'],[C.red,'Red dashed line = legal price limit','Floor: price can\'t go below it. Ceiling: price can\'t go above it.','dash'],[C.red,'Red band','The gap between Q<sup>D</sup> and Q<sup>S</sup> at the controlled price: a surplus (floor) or shortage (ceiling).','box'],['#1d1d1f','Black dot','The quantity actually traded: the <b>smaller</b> of Q<sup>D</sup> and Q<sup>S</sup>.','dot']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  let mode='floor';const q=c=>$(c,root);
+  const render=()=>{const p=+q('.p').value;q('.vp').textContent=p;
+    const F=frame({xmax:140,ymax:24,xs:20,ys:4,xl:'Quantity (Q)',yl:'Price (P)'});let s=F.s;
+    s+=CV(F,P=>100-5*P,C.blue,3.5)+CV(F,P=>5*P-20,C.orange,3.5)+T(F.sx(85),F.sy(3)-6,'D',C.blue)+T(F.sx(85),F.sy(21)-6,'S',C.orange);
+    const qd=Math.max(0,100-5*p),qs=Math.max(0,5*p-20);
+    const binding=mode==='floor'?p>12:p<12;
+    s+=LN(F,0,12,40,12,C.grey,1,'3 4')+LN(F,0,p,140,p,C.red,2,'6 5')+T(F.sx(138),F.sy(p)-6,(mode==='floor'?'floor P':'ceiling P')+'='+n1(p),C.red,'end');
+    let txt;
+    if(binding){s+=RECT(F,qd,p-0.5,qs,p+0.5,C.red,.4)+DOT(F.sx(qd),F.sy(p),C.blue,5)+DOT(F.sx(qs),F.sy(p),C.orange,5);
+      const tr=Math.min(qd,qs);s+=DOT(F.sx(tr),F.sy(p),'#1d1d1f',7);
+      txt='<b>Binding.</b> Q<sup>D</sup> = '+n1(qd)+', Q<sup>S</sup> = '+n1(qs)+'.<br>'+(mode==='floor'?'<b>Surplus of '+n1(qs-qd)+'</b>':'<b>Shortage of '+n1(qd-qs)+'</b>')+'. Quantity traded = '+n1(tr)+' (down from 40).'}
+    else{s+=DOT(F.sx(40),F.sy(12),'#1d1d1f',7);txt='<b>Not binding.</b> The '+(mode==='floor'?'floor is below':'ceiling is above')+' the equilibrium price (12), so the market simply settles at P* = 12, Q* = 40. The control has <b>no effect</b>.'}
+    slot.innerHTML=SVG(s);q('.out').innerHTML=txt};
+  $$('[data-m]',root).forEach(b=>b.onclick=()=>{mode=b.dataset.m;$$('[data-m]',root).forEach(x=>x.className='btn '+(x===b?'on':'ghost'));q('.p').value=mode==='floor'?16:8;render()});
+  q('.p').oninput=render;render()});
+
+/* taxes */
+chart('tax',root=>{
+  root.innerHTML=LAB('',`
+  <div class="btns"><button class="btn on" data-w="seller">Tax on sellers</button><button class="btn ghost" data-w="buyer">Tax on buyers</button></div>
+  <div class="ctrl"><label>Tax per unit t: <b class="vt">4</b></label><input type="range" class="t" min="0" max="8" step="0.5" value="4"></div>
+  <div class="ctrl"><label>How responsive are buyers and sellers?</label><select class="el"><option value="5,5">Equal slopes (the lecture-style example)</option><option value="2,8">Buyers unresponsive (steep demand), sellers responsive</option><option value="8,2">Sellers unresponsive (steep supply), buyers responsive</option></select></div>
+  <div class="read out"></div>
+  ${legend([[C.blue,'Demand D (demand price P<sup>D</sup>)','What buyers pay.'],[C.orange,'Supply S (supply price P<sup>S</sup>)','What sellers keep.'],[C.red,'Shifted supply S + t (dashed)','Tax on sellers: supply curve moved <b>up</b> by t, in terms of gross price.','dash'],[C.purple,'Shifted demand D − t (dashed)','Tax on buyers: demand curve moved <b>down</b> by t, in terms of net price.','dash'],[C.blue,'Blue band: buyers\' burden','From P* up to P<sup>D</sup>.','box'],[C.orange,'Orange band: sellers\' burden','From P<sup>S</sup> up to P*.','box']])}`);
+  const slot=document.createElement('div');slot.className='svgslot';root.querySelector('.lab').prepend(slot);
+  let who='seller';const q=c=>$(c,root);
+  const render=()=>{const t=+q('.t').value;q('.vt').textContent=t;const[a,b]=q('.el').value.split(',').map(Number);
+    const QD=P=>40-a*(P-12),QS=P=>40+b*(P-12);
+    const Pd=12+b*t/(a+b),Ps=Pd-t,Q=40-a*b*t/(a+b);
+    const F=frame({xmax:140,ymax:24,xs:20,ys:4,xl:'Quantity (Q)',yl:'Price (P)'});let s=F.s;
+    if(t>0){s+=RECT(F,0,12,Q,Pd,C.blue,.28)+RECT(F,0,Ps,Q,12,C.orange,.3)}
+    s+=CV(F,QD,C.blue,3.5)+CV(F,QS,C.orange,3.5);
+    if(t>0){if(who==='seller')s+=CV(F,P=>QS(P-t),C.red,2.6,'7 5');else s+=CV(F,P=>QD(P+t),C.purple,2.6,'7 5')}
+    s+=LN(F,0,12,40,12,C.grey,1,'3 4')+DOT(F.sx(40),F.sy(12),C.grey,5);
+    if(t>0){s+=LN(F,Q,0,Q,Pd,'#1d1d1f',1.3,'4 4')+LN(F,0,Pd,Q,Pd,C.blue,1.2,'4 4')+LN(F,0,Ps,Q,Ps,C.orange,1.2,'4 4')+DOT(F.sx(Q),F.sy(Pd),C.blue,6)+DOT(F.sx(Q),F.sy(Ps),C.orange,6);
+      s+=T(F.sx(0)+8,F.sy(Pd)-5,'P\u1D30='+n1(Pd),C.blue)+T(F.sx(0)+8,F.sy(Ps)+14,'P\u02E2='+n1(Ps),C.orange)+T(F.sx(Q),F.sy(0)-8,"Q'="+n1(Q),'#1d1d1f','middle')}
+    s+=T(F.sx(0)+8,F.sy(12)-5,'P*=12',C.grey);
+    slot.innerHTML=SVG(s);
+    q('.out').innerHTML=t===0?'No tax: P* = 12, Q* = 40.':`Buyers pay <b>${n1(Pd)}</b> (+${n1(Pd-12)}), sellers keep <b>${n1(Ps)}</b> (−${n1(12-Ps)}); <b>P<sup>D</sup> − P<sup>S</sup> = ${n1(Pd-Ps)} = t</b>.<br>Quantity falls 40 → <b>${n1(Q)}</b>. Government revenue = t × Q′ = <b>${n1(t*Q)}</b>.<br>Buyers bear <b>${Math.round((Pd-12)/t*100)}%</b>, sellers <b>${Math.round((12-Ps)/t*100)}%</b> of the tax. The less responsive (steeper) side bears more.`};
+  $$('[data-w]',root).forEach(bt=>bt.onclick=()=>{who=bt.dataset.w;$$('[data-w]',root).forEach(x=>x.className='btn '+(x===bt?'on':'ghost'));render()});
+  q('.t').oninput=render;q('.el').onchange=render;render()});
+
+/* init */
+const h=parseInt((location.hash||'').slice(1),10);go(isNaN(h)?0:h-1);
+})();
+</script>
+</body>
+</html>
